@@ -1,0 +1,629 @@
+{
+  "level": "A1",
+  "lessons": [
+    {
+      "id": "a1-01",
+      "num": 1,
+      "title": "Привіт! Знайомство",
+      "titleDe": "Hallo! Wer bist du?",
+      "topic": "Вітаємося і прощаємося, називаємо ім’я, кажемо, звідки ми і де живемо.",
+      "scene": {
+        "title": "Перший день на курсах",
+        "lines": [
+          { "who": "Max", "de": "Hallo! Ich bin Max. Wie heißt du?", "ua": "Привіт! Я Макс. Як тебе звати?" },
+          { "who": "Olena", "de": "Hallo, Max! Ich heiße Olena.", "ua": "Привіт, Максе! Мене звати Олена." },
+          { "who": "Max", "de": "Woher kommst du?", "ua": "Звідки ти?" },
+          { "who": "Olena", "de": "Aus der Ukraine. Und du?", "ua": "З України. А ти?" },
+          { "who": "Max", "de": "Ich komme aus Deutschland. Wie geht's?", "ua": "Я з Німеччини. Як справи?" },
+          { "who": "Olena", "de": "Gut, danke!", "ua": "Добре, дякую!" },
+          { "who": "Frau Weber", "de": "Guten Morgen! Ich bin Frau Weber. Wie heißen Sie?", "ua": "Доброго ранку! Я пані Вебер. Як вас звати?" },
+          { "who": "Olena", "de": "Ich heiße Olena Kowalenko.", "ua": "Мене звати Олена Коваленко." },
+          { "who": "Frau Weber", "de": "Und wo wohnen Sie, Frau Kowalenko?", "ua": "А де ви живете, пані Коваленко?" },
+          { "who": "Olena", "de": "Ich wohne in Berlin.", "ua": "Я живу в Берліні." }
+        ]
+      },
+      "fact": "На «ти» в Німеччині переходять повільніше, ніж в Україні. До продавця, лікаря чи викладача звертаються на **Sie**, поки вони самі не запропонують **du**. А от на мовних курсах, серед студентів і в спортзалі всі одразу кажуть **du**.",
+      "grammar": [
+        {
+          "title": "Дієслово стоїть на другому місці",
+          "text": "У звичайному реченні та в питанні з питальним словом (wie, wo, woher) дієслово завжди стоїть **на другому місці**.\nWie **heißt** du? — Ich **heiße** Anna.\nWoher **kommst** du? — Ich **komme** aus der Ukraine."
+        },
+        {
+          "title": "Дієвідмінювання: ich, du, Sie",
+          "text": "Закінчення: ich **-e**, du **-st**, Sie **-en**. У heißen основа вже закінчується на ß, тому du heiß**t**, а не heißst. Дієслово sein неправильне, його форми треба запам’ятати.",
+          "table": [
+            ["", "heißen", "kommen", "wohnen", "sein"],
+            ["ich", "heiße", "komme", "wohne", "bin"],
+            ["du", "heißt", "kommst", "wohnst", "bist"],
+            ["Sie", "heißen", "kommen", "wohnen", "sind"]
+          ]
+        },
+        {
+          "title": "du чи Sie?",
+          "text": "**du** кажемо друзям, рідним, дітям і одноліткам. **Sie** (завжди з великої літери) — ввічливе «Ви»: незнайомим дорослим, у магазині, на роботі."
+        },
+        {
+          "title": "aus der Ukraine",
+          "text": "Більшість країн уживаються без артикля: aus Deutschland, in Österreich. Але Україна — з артиклем **die**: Ich komme **aus der** Ukraine. Ich wohne **in der** Ukraine."
+        }
+      ],
+      "words": [
+        { "id": "a1-hallo", "de": "hallo", "pos": "phr", "ua": "привіт", "ex": "Hallo, ich bin Max.", "exUa": "Привіт, я Макс." },
+        { "id": "a1-guten-morgen", "de": "guten Morgen", "pos": "phr", "ua": "доброго ранку", "ex": "Guten Morgen, Frau Weber!", "exUa": "Доброго ранку, пані Вебер!" },
+        { "id": "a1-guten-tag", "de": "guten Tag", "pos": "phr", "ua": "добрий день", "ex": "Guten Tag! Wie heißen Sie?", "exUa": "Добрий день! Як Вас звати?" },
+        { "id": "a1-guten-abend", "de": "guten Abend", "pos": "phr", "ua": "добрий вечір", "ex": "Guten Abend, Herr Bauer!", "exUa": "Добрий вечір, пане Бауер!" },
+        { "id": "a1-tschues", "de": "tschüs", "alt": ["tschüss"], "pos": "phr", "ua": "бувай", "ex": "Tschüs, bis morgen!", "exUa": "Бувай, до завтра!" },
+        { "id": "a1-auf-wiedersehen", "de": "auf Wiedersehen", "pos": "phr", "ua": "до побачення", "ex": "Auf Wiedersehen, Herr Klein!", "exUa": "До побачення, пане Кляйн!" },
+        { "id": "a1-danke", "de": "danke", "pos": "phr", "ua": "дякую", "ex": "Danke, gut!", "exUa": "Дякую, добре!" },
+        { "id": "a1-bitte", "de": "bitte", "pos": "phr", "ua": "будь ласка", "ex": "Noch einmal, bitte.", "exUa": "Ще раз, будь ласка." },
+        { "id": "a1-ja", "de": "ja", "pos": "adv", "ua": "так", "ex": "Ja, ich wohne in Berlin.", "exUa": "Так, я живу в Берліні." },
+        { "id": "a1-nein", "de": "nein", "pos": "adv", "ua": "ні", "ex": "Nein, danke.", "exUa": "Ні, дякую." },
+        { "id": "a1-wie-gehts", "de": "Wie geht's?", "alt": ["Wie geht es dir?", "Wie geht es Ihnen?"], "pos": "phr", "ua": "як справи?", "ex": "Hallo Anna, wie geht's?", "exUa": "Привіт, Анно, як справи?" },
+        { "id": "a1-name", "de": "Name", "art": "der", "pl": "Namen", "pos": "n", "ua": "ім’я", "ex": "Mein Name ist Lukas.", "exUa": "Мене звати Лукас." },
+        { "id": "a1-familienname", "de": "Familienname", "art": "der", "pl": "Familiennamen", "pos": "n", "ua": "прізвище", "ex": "Wie ist Ihr Familienname?", "exUa": "Яке у Вас прізвище?" },
+        { "id": "a1-heissen", "de": "heißen", "pos": "v", "forms": "du heißt, er heißt", "ua": "називатися (мене звати…)", "ex": "Wie heißt du?", "exUa": "Як тебе звати?" },
+        { "id": "a1-sein", "de": "sein", "pos": "v", "forms": "ich bin, du bist, er ist, Sie sind", "ua": "бути", "ex": "Ich bin Taras.", "exUa": "Я Тарас." },
+        { "id": "a1-kommen", "de": "kommen", "pos": "v", "forms": "du kommst, er kommt", "ua": "приходити; бути родом (звідкись)", "ex": "Ich komme aus der Ukraine.", "exUa": "Я з України." },
+        { "id": "a1-wohnen", "de": "wohnen", "pos": "v", "forms": "du wohnst, er wohnt", "ua": "мешкати (де саме)", "ex": "Wo wohnst du?", "exUa": "Де ти живеш?" },
+        { "id": "a1-wie", "de": "wie", "pos": "adv", "ua": "як", "ex": "Wie heißen Sie?", "exUa": "Як Вас звати?" },
+        { "id": "a1-woher", "de": "woher", "pos": "adv", "ua": "звідки", "ex": "Woher kommst du?", "exUa": "Звідки ти?" },
+        { "id": "a1-wo", "de": "wo", "pos": "adv", "ua": "де", "ex": "Wo wohnen Sie?", "exUa": "Де Ви живете?" },
+        { "id": "a1-ich", "de": "ich", "pos": "pron", "ua": "я", "ex": "Ich bin Anna.", "exUa": "Я Анна." },
+        { "id": "a1-du", "de": "du", "pos": "pron", "ua": "ти", "ex": "Bist du Max?", "exUa": "Ти Макс?" },
+        { "id": "a1-sie-formal", "de": "Sie", "pos": "pron", "ua": "Ви (ввічливо)", "ex": "Sind Sie Frau Weber?", "exUa": "Ви пані Вебер?" },
+        { "id": "a1-und", "de": "und", "pos": "conj", "ua": "і, а", "ex": "Ich bin Anna, und du?", "exUa": "Я Анна, а ти?" },
+        { "id": "a1-aus", "de": "aus", "pos": "prep", "ua": "з (звідки)", "ex": "Paul kommt aus Österreich.", "exUa": "Пауль з Австрії." },
+        { "id": "a1-in", "de": "in", "pos": "prep", "ua": "в, у (де)", "ex": "Ich wohne in Berlin.", "exUa": "Я живу в Берліні." },
+        { "id": "a1-ukraine", "de": "Ukraine", "art": "die", "pl": null, "pos": "n", "ua": "Україна", "note": "з артиклем: aus der Ukraine, in der Ukraine", "ex": "Ich wohne in der Ukraine.", "exUa": "Я живу в Україні." },
+        { "id": "a1-deutschland", "de": "Deutschland", "pos": "name", "ua": "Німеччина", "ex": "Wohnst du in Deutschland?", "exUa": "Ти живеш у Німеччині?" },
+        { "id": "a1-herr", "de": "Herr", "art": "der", "pl": "Herren", "pos": "n", "ua": "пан", "ex": "Guten Tag, Herr Schmidt!", "exUa": "Добрий день, пане Шмідт!" },
+        { "id": "a1-frau", "de": "Frau", "art": "die", "pl": "Frauen", "pos": "n", "ua": "пані; жінка", "ex": "Das ist Frau Müller.", "exUa": "Це пані Мюллер." },
+        { "id": "a1-gut", "de": "gut", "pos": "adj", "ua": "добре; добрий", "ex": "Mir geht es gut.", "exUa": "У мене все добре." }
+      ],
+      "exercises": [
+        { "type": "choice", "q": "Wie ___ du?", "options": ["heißt", "heiße", "heißen"], "answer": "heißt", "explain": "З du закінчення -st, але в heißen основа вже має ß, тому просто du heißt." },
+        { "type": "choice", "q": "Ich ___ aus der Ukraine.", "options": ["komme", "kommst", "kommen"], "answer": "komme", "explain": "З ich закінчення -e: ich komme." },
+        { "type": "choice", "q": "Woher ___ Sie?", "options": ["kommen", "kommst", "komme"], "answer": "kommen", "explain": "Ввічливе Sie має таку саму форму, як інфінітив: Sie kommen." },
+        { "type": "choice", "q": "___ wohnst du? — In Berlin.", "options": ["Wo", "Woher", "Wie"], "answer": "Wo", "explain": "wo — де, woher — звідки, wie — як." },
+        { "type": "gap", "q": "Wo ___ du? — Ich wohne in Berlin.", "hint": "wohnen", "answers": ["wohnst"], "explain": "З du закінчення -st: du wohnst." },
+        { "type": "gap", "q": "Ich ___ Taras.", "hint": "sein", "answers": ["bin"], "explain": "sein: ich bin, du bist, Sie sind." },
+        { "type": "order", "words": ["heißt", "Wie", "du"], "answers": ["Wie heißt du?"], "ua": "Як тебе звати?" },
+        { "type": "order", "words": ["komme", "aus", "Ich", "der", "Ukraine"], "answers": ["Ich komme aus der Ukraine.", "Aus der Ukraine komme ich."], "ua": "Я з України." },
+        { "type": "translate", "ua": "Добрий день! Як Вас звати?", "answers": ["Guten Tag! Wie heißen Sie?", "Guten Tag! Wie ist Ihr Name?"] },
+        { "type": "translate", "ua": "Де ти живеш?", "answers": ["Wo wohnst du?"] }
+      ],
+      "speak": [
+        { "type": "sentence", "ua": "Як тебе звати?", "answers": ["Wie heißt du?"] },
+        { "type": "sentence", "ua": "Звідки Ви?", "answers": ["Woher kommen Sie?"] },
+        { "type": "sentence", "ua": "Я з України.", "answers": ["Ich komme aus der Ukraine.", "Ich bin aus der Ukraine."] },
+        { "type": "sentence", "ua": "Де ти живеш?", "answers": ["Wo wohnst du?"] },
+        { "type": "question", "de": "Wie heißt du?", "ua": "Як тебе звати?", "accept": ["ich heiße *", "mein name ist *", "ich bin *"], "example": "Ich heiße Max." },
+        { "type": "question", "de": "Woher kommst du?", "ua": "Звідки ти?", "accept": ["ich komme aus *", "ich bin aus *", "aus *"], "example": "Ich komme aus der Ukraine." },
+        { "type": "question", "de": "Wie geht's?", "ua": "Як справи?", "accept": ["*gut*", "es geht*", "*super*", "*prima*"], "example": "Danke, gut!" }
+      ]
+    },
+    {
+      "id": "a1-02",
+      "num": 2,
+      "title": "Професія і числа",
+      "titleDe": "Was bist du von Beruf?",
+      "topic": "Розповідаємо про професію, рахуємо до ста, називаємо вік і номер телефону.",
+      "scene": {
+        "title": "Після заняття",
+        "lines": [
+          { "who": "Max", "de": "Was bist du von Beruf, Olena?", "ua": "Ким ти працюєш, Олено?" },
+          { "who": "Olena", "de": "Ich bin Ärztin. Und du? Bist du Student?", "ua": "Я лікарка. А ти? Ти студент?" },
+          { "who": "Max", "de": "Nein, ich bin Lehrer. Ich arbeite hier in Berlin.", "ua": "Ні, я вчитель. Я працюю тут, у Берліні." },
+          { "who": "Olena", "de": "Und Anna? Was ist sie von Beruf?", "ua": "А Анна? Ким вона працює?" },
+          { "who": "Max", "de": "Sie ist Verkäuferin. Sie arbeitet auch hier.", "ua": "Вона продавчиня. Вона теж працює тут." },
+          { "who": "Olena", "de": "Wie alt ist Anna?", "ua": "Скільки Анні років?" },
+          { "who": "Max", "de": "Sie ist zwanzig. Und wie alt bist du?", "ua": "Двадцять. А тобі скільки?" },
+          { "who": "Olena", "de": "Ich bin achtundzwanzig.", "ua": "Мені двадцять вісім." },
+          { "who": "Max", "de": "Und die Telefonnummer?", "ua": "А номер телефону?" },
+          { "who": "Olena", "de": "Null, eins, sieben, sechs, zwei, vier, acht, neun.", "ua": "Нуль, один, сім, шість, два, чотири, вісім, дев’ять." }
+        ]
+      },
+      "fact": "По телефону німці часто кажуть **zwo** замість zwei, щоб не сплутати з drei. Довгі номери читають парами: 0176 → «null, eins, sechsundsiebzig».",
+      "grammar": [
+        {
+          "title": "Дієвідмінювання: усі особи",
+          "text": "Якщо основа закінчується на **-t** або **-d** (arbeit-, find-), перед -st і -t з’являється **-e-**: du arbeit**e**st, er arbeit**e**t.\nsie означає «вона» або «вони». Розрізняємо за дієсловом: sie wohn**t** — вона, sie wohn**en** — вони.",
+          "table": [
+            ["", "wohnen", "arbeiten", "sein"],
+            ["ich", "wohne", "arbeite", "bin"],
+            ["du", "wohnst", "arbeitest", "bist"],
+            ["er, sie, es", "wohnt", "arbeitet", "ist"],
+            ["wir", "wohnen", "arbeiten", "sind"],
+            ["ihr", "wohnt", "arbeitet", "seid"],
+            ["sie, Sie", "wohnen", "arbeiten", "sind"]
+          ]
+        },
+        {
+          "title": "Питання «так чи ні»",
+          "text": "Якщо питального слова немає, дієслово йде **на перше місце**:\n**Bist** du Student? — Ja. / Nein, ich bin Lehrer.\n**Arbeiten** Sie hier? — Ja, ich arbeite hier."
+        },
+        {
+          "title": "Професія: чоловік і жінка",
+          "text": "Жіноча форма зазвичай має суфікс **-in**: der Lehrer → die Lehrer**in**, der Student → die Student**in**. Інколи додається умлаут: der Arzt → die **Ä**rzt**in**.\nПісля sein професію називаємо **без артикля**: Ich bin Lehrer. Sie ist Ärztin."
+        },
+        {
+          "title": "Числа",
+          "text": "13–19: одиниці + zehn (dreizehn, vierzehn), але **sech**zehn і **sieb**zehn.\nДесятки: zwan**zig**, drei**ßig**, vier**zig**, fünf**zig**.\nДвозначні числа читаються «навпаки»: 21 = **ein**und**zwanzig** (один-і-двадцять), 35 = fünfunddreißig."
+        }
+      ],
+      "words": [
+        { "id": "a1-beruf", "de": "Beruf", "art": "der", "pl": "Berufe", "pos": "n", "ua": "професія", "ex": "Was sind Sie von Beruf?", "exUa": "Ким Ви працюєте?" },
+        { "id": "a1-arbeiten", "de": "arbeiten", "pos": "v", "forms": "du arbeitest, er arbeitet", "ua": "працювати", "ex": "Ich arbeite in Berlin.", "exUa": "Я працюю в Берліні." },
+        { "id": "a1-lehrer", "de": "Lehrer", "art": "der", "pl": "Lehrer", "pos": "n", "ua": "вчитель", "note": "жін.: die Lehrerin", "ex": "Er ist Lehrer.", "exUa": "Він учитель." },
+        { "id": "a1-arzt", "de": "Arzt", "art": "der", "pl": "Ärzte", "pos": "n", "ua": "лікар", "note": "жін.: die Ärztin", "ex": "Herr Weber ist Arzt.", "exUa": "Пан Вебер — лікар." },
+        { "id": "a1-student", "de": "Student", "art": "der", "pl": "Studenten", "pos": "n", "ua": "студент", "note": "жін.: die Studentin", "ex": "Bist du Student?", "exUa": "Ти студент?" },
+        { "id": "a1-schueler", "de": "Schüler", "art": "der", "pl": "Schüler", "pos": "n", "ua": "учень, школяр", "note": "жін.: die Schülerin", "ex": "Tom ist Schüler.", "exUa": "Том — школяр." },
+        { "id": "a1-verkaeufer", "de": "Verkäufer", "art": "der", "pl": "Verkäufer", "pos": "n", "ua": "продавець", "note": "жін.: die Verkäuferin", "ex": "Er ist Verkäufer.", "exUa": "Він продавець." },
+        { "id": "a1-arbeit", "de": "Arbeit", "art": "die", "pl": "Arbeiten", "pos": "n", "ua": "робота", "ex": "Die Arbeit ist interessant.", "exUa": "Робота цікава." },
+        { "id": "a1-firma", "de": "Firma", "art": "die", "pl": "Firmen", "pos": "n", "ua": "фірма", "ex": "Die Firma ist in Hamburg.", "exUa": "Фірма в Гамбурзі." },
+        { "id": "a1-hier", "de": "hier", "pos": "adv", "ua": "тут", "ex": "Ich wohne hier.", "exUa": "Я живу тут." },
+        { "id": "a1-auch", "de": "auch", "pos": "adv", "ua": "також, теж", "ex": "Ich bin auch Student.", "exUa": "Я теж студент." },
+        { "id": "a1-er", "de": "er", "pos": "pron", "ua": "він", "ex": "Er heißt Paul.", "exUa": "Його звати Пауль." },
+        { "id": "a1-sie", "de": "sie", "pos": "pron", "ua": "вона; вони", "ex": "Sie heißt Marta.", "exUa": "Її звати Марта." },
+        { "id": "a1-wir", "de": "wir", "pos": "pron", "ua": "ми", "ex": "Wir wohnen in Wien.", "exUa": "Ми живемо у Відні." },
+        { "id": "a1-ihr", "de": "ihr", "pos": "pron", "ua": "ви (кільком друзям)", "ex": "Woher kommt ihr?", "exUa": "Звідки ви?" },
+        { "id": "a1-alt", "de": "alt", "pos": "adj", "ua": "старий", "note": "Wie alt bist du? — Скільки тобі років?", "ex": "Ich bin 20 Jahre alt.", "exUa": "Мені 20 років." },
+        { "id": "a1-jahr", "de": "Jahr", "art": "das", "pl": "Jahre", "pos": "n", "ua": "рік", "ex": "Das Kind ist ein Jahr alt.", "exUa": "Дитині один рік." },
+        { "id": "a1-telefonnummer", "de": "Telefonnummer", "art": "die", "pl": "Telefonnummern", "pos": "n", "ua": "номер телефону", "ex": "Wie ist deine Telefonnummer?", "exUa": "Який у тебе номер телефону?" },
+        { "id": "a1-null", "de": "null", "pos": "num", "ua": "нуль", "ex": "Zehn minus zehn ist null.", "exUa": "Десять мінус десять — нуль." },
+        { "id": "a1-eins", "de": "eins", "pos": "num", "ua": "один", "ex": "Eins und eins ist zwei.", "exUa": "Один плюс один — два." },
+        { "id": "a1-zwei", "de": "zwei", "pos": "num", "ua": "два", "ex": "Zwei und zwei ist vier.", "exUa": "Два плюс два — чотири." },
+        { "id": "a1-drei", "de": "drei", "pos": "num", "ua": "три", "ex": "Drei und drei ist sechs.", "exUa": "Три плюс три — шість." },
+        { "id": "a1-vier", "de": "vier", "pos": "num", "ua": "чотири", "ex": "Vier und vier ist acht.", "exUa": "Чотири плюс чотири — вісім." },
+        { "id": "a1-fuenf", "de": "fünf", "pos": "num", "ua": "п’ять", "ex": "Fünf und fünf ist zehn.", "exUa": "П’ять плюс п’ять — десять." },
+        { "id": "a1-sechs", "de": "sechs", "pos": "num", "ua": "шість", "ex": "Sechs minus eins ist fünf.", "exUa": "Шість мінус один — п’ять." },
+        { "id": "a1-sieben", "de": "sieben", "pos": "num", "ua": "сім", "ex": "Die Woche hat sieben Tage.", "exUa": "У тижні сім днів." },
+        { "id": "a1-acht", "de": "acht", "pos": "num", "ua": "вісім", "ex": "Es ist acht Uhr.", "exUa": "Зараз восьма година." },
+        { "id": "a1-neun", "de": "neun", "pos": "num", "ua": "дев’ять", "ex": "Neun minus drei ist sechs.", "exUa": "Дев’ять мінус три — шість." },
+        { "id": "a1-zehn", "de": "zehn", "pos": "num", "ua": "десять", "ex": "Zehn und zehn ist zwanzig.", "exUa": "Десять плюс десять — двадцять." },
+        { "id": "a1-zwanzig", "de": "zwanzig", "pos": "num", "ua": "двадцять", "ex": "Zwanzig minus zehn ist zehn.", "exUa": "Двадцять мінус десять — десять." },
+        { "id": "a1-hundert", "de": "hundert", "pos": "num", "ua": "сто", "ex": "Das kostet hundert Euro.", "exUa": "Це коштує сто євро." }
+      ],
+      "exercises": [
+        { "type": "choice", "q": "Er ___ in Hamburg.", "options": ["wohnt", "wohnst", "wohnen"], "answer": "wohnt", "explain": "З er, sie, es закінчення -t: er wohnt." },
+        { "type": "choice", "q": "Wir ___ Studenten.", "options": ["sind", "seid", "ist"], "answer": "sind", "explain": "sein: wir sind, ihr seid, sie sind." },
+        { "type": "choice", "q": "Was ___ ihr von Beruf?", "options": ["seid", "sind", "bist"], "answer": "seid", "explain": "ihr seid — ви (кільком друзям)." },
+        { "type": "choice", "q": "___ du Student? — Ja.", "options": ["Bist", "Ist", "Sind"], "answer": "Bist", "explain": "У питанні «так чи ні» дієслово на першому місці, форма для du — bist." },
+        { "type": "gap", "q": "Du ___ in Berlin.", "hint": "arbeiten", "answers": ["arbeitest"], "explain": "Основа закінчується на -t, тому додаємо -e-: du arbeitest." },
+        { "type": "gap", "q": "Anna ist Lehrer___.", "hint": "жіноча форма", "answers": ["in"], "explain": "Жіноча форма професії має суфікс -in: Lehrer → Lehrerin." },
+        { "type": "choice", "q": "21 — це…", "options": ["einundzwanzig", "zwanzigeins", "einszwanzig"], "answer": "einundzwanzig", "say": "einundzwanzig", "explain": "Спочатку одиниці, потім und, потім десятки: ein-und-zwanzig." },
+        { "type": "order", "words": ["Sie", "Arzt", "Sind"], "answers": ["Sind Sie Arzt?"], "ua": "Ви лікар?" },
+        { "type": "order", "words": ["alt", "du", "Wie", "bist"], "answers": ["Wie alt bist du?"], "ua": "Скільки тобі років?" },
+        { "type": "translate", "ua": "Мені двадцять років.", "answers": ["Ich bin zwanzig Jahre alt.", "Ich bin zwanzig."] }
+      ],
+      "speak": [
+        { "type": "sentence", "ua": "Ким ти працюєш?", "answers": ["Was bist du von Beruf?"] },
+        { "type": "sentence", "ua": "Я студент.", "answers": ["Ich bin Student.", "Ich bin Studentin."] },
+        { "type": "sentence", "ua": "Він працює тут.", "answers": ["Er arbeitet hier."] },
+        { "type": "sentence", "ua": "Ми теж з України.", "answers": ["Wir kommen auch aus der Ukraine.", "Wir sind auch aus der Ukraine."] },
+        { "type": "question", "de": "Wie alt bist du?", "ua": "Скільки тобі років?", "accept": ["ich bin # jahre alt", "ich bin # jahre", "ich bin #", "# jahre alt", "# jahre", "#"], "example": "Ich bin 20 Jahre alt." },
+        { "type": "question", "de": "Was bist du von Beruf?", "ua": "Ким ти працюєш?", "accept": ["ich bin *", "ich arbeite als *", "ich arbeite *"], "example": "Ich bin Student." }
+      ]
+    },
+    {
+      "id": "a1-03",
+      "num": 3,
+      "title": "Моя сім’я",
+      "titleDe": "Meine Familie",
+      "topic": "Розповідаємо про родину, країни і мови.",
+      "scene": {
+        "title": "Моя родина",
+        "lines": [
+          { "who": "Max", "de": "Wer ist das?", "ua": "Хто це?" },
+          { "who": "Olena", "de": "Das ist meine Familie. Das sind meine Eltern.", "ua": "Це моя родина. Це мої батьки." },
+          { "who": "Max", "de": "Und wer ist das?", "ua": "А це хто?" },
+          { "who": "Olena", "de": "Das ist mein Bruder Taras. Er lebt in Österreich.", "ua": "Це мій брат Тарас. Він живе в Австрії." },
+          { "who": "Max", "de": "Spricht er Deutsch?", "ua": "Він розмовляє німецькою?" },
+          { "who": "Olena", "de": "Ja, er spricht gut Deutsch.", "ua": "Так, він добре говорить німецькою." },
+          { "who": "Max", "de": "Und deine Schwester?", "ua": "А твоя сестра?" },
+          { "who": "Olena", "de": "Sie ist verheiratet und lebt in der Ukraine.", "ua": "Вона заміжня і живе в Україні." },
+          { "who": "Max", "de": "Welche Sprachen sprichst du?", "ua": "Якими мовами ти розмовляєш?" },
+          { "who": "Olena", "de": "Ukrainisch, Englisch und ein bisschen Deutsch.", "ua": "Українською, англійською і трохи німецькою." }
+        ]
+      },
+      "fact": "Німецькою говорять у Німеччині, Австрії, Швейцарії та Ліхтенштейні. Вітаються по-різному: в Австрії й на півдні Німеччини чути **Servus** і **Grüß Gott**, а у Швейцарії кажуть **Grüezi**.",
+      "grammar": [
+        {
+          "title": "mein і dein",
+          "text": "Перед словами жіночого роду і в множині додаємо **-e**: mein**e** Schwester, dein**e** Kinder.",
+          "table": [
+            ["", "der", "das", "die", "множина"],
+            ["мій", "mein Vater", "mein Kind", "meine Mutter", "meine Eltern"],
+            ["твій", "dein Vater", "dein Kind", "deine Mutter", "deine Eltern"]
+          ]
+        },
+        {
+          "title": "sprechen: e → i",
+          "text": "У деяких дієсловах голосна змінюється **тільки з du та er/sie/es**. Такі форми краще вчити разом із дієсловом.",
+          "table": [
+            ["ich", "spreche"],
+            ["du", "spr**i**chst"],
+            ["er, sie, es", "spr**i**cht"],
+            ["wir", "sprechen"],
+            ["ihr", "sprecht"],
+            ["sie, Sie", "sprechen"]
+          ]
+        },
+        {
+          "title": "Країни і мови",
+          "text": "Звідки? — **aus**: Ich komme aus Österreich. Де? — **in**: Ich wohne in Österreich.\nНазва мови часто схожа на назву країни: Deutschland → **Deutsch**, England → **Englisch**, die Ukraine → **Ukrainisch**. Мови пишуться з великої літери."
+        }
+      ],
+      "words": [
+        { "id": "a1-familie", "de": "Familie", "art": "die", "pl": "Familien", "pos": "n", "ua": "сім’я, родина", "ex": "Meine Familie ist groß.", "exUa": "Моя сім’я велика." },
+        { "id": "a1-mutter", "de": "Mutter", "art": "die", "pl": "Mütter", "pos": "n", "ua": "мати, мама", "ex": "Meine Mutter heißt Olga.", "exUa": "Мою маму звати Ольга." },
+        { "id": "a1-vater", "de": "Vater", "art": "der", "pl": "Väter", "pos": "n", "ua": "батько, тато", "ex": "Mein Vater arbeitet hier.", "exUa": "Мій тато працює тут." },
+        { "id": "a1-eltern", "de": "Eltern", "art": "die", "plOnly": true, "pos": "n", "ua": "батьки", "ex": "Wo wohnen deine Eltern?", "exUa": "Де живуть твої батьки?" },
+        { "id": "a1-bruder", "de": "Bruder", "art": "der", "pl": "Brüder", "pos": "n", "ua": "брат", "ex": "Mein Bruder ist Student.", "exUa": "Мій брат — студент." },
+        { "id": "a1-schwester", "de": "Schwester", "art": "die", "pl": "Schwestern", "pos": "n", "ua": "сестра", "ex": "Meine Schwester heißt Ira.", "exUa": "Мою сестру звати Іра." },
+        { "id": "a1-geschwister", "de": "Geschwister", "art": "die", "plOnly": true, "pos": "n", "ua": "брати й сестри", "ex": "Hast du Geschwister?", "exUa": "У тебе є брати чи сестри?" },
+        { "id": "a1-kind", "de": "Kind", "art": "das", "pl": "Kinder", "pos": "n", "ua": "дитина", "ex": "Das Kind ist drei Jahre alt.", "exUa": "Дитині три роки." },
+        { "id": "a1-sohn", "de": "Sohn", "art": "der", "pl": "Söhne", "pos": "n", "ua": "син", "ex": "Der Sohn heißt Max.", "exUa": "Сина звати Макс." },
+        { "id": "a1-tochter", "de": "Tochter", "art": "die", "pl": "Töchter", "pos": "n", "ua": "донька", "ex": "Die Tochter ist zehn Jahre alt.", "exUa": "Доньці десять років." },
+        { "id": "a1-oma", "de": "Oma", "art": "die", "pl": "Omas", "pos": "n", "ua": "бабуся", "ex": "Meine Oma ist 80 Jahre alt.", "exUa": "Моїй бабусі 80 років." },
+        { "id": "a1-opa", "de": "Opa", "art": "der", "pl": "Opas", "pos": "n", "ua": "дідусь", "ex": "Mein Opa spricht Deutsch.", "exUa": "Мій дідусь розмовляє німецькою." },
+        { "id": "a1-mann", "de": "Mann", "art": "der", "pl": "Männer", "pos": "n", "ua": "чоловік", "ex": "Das ist mein Mann.", "exUa": "Це мій чоловік." },
+        { "id": "a1-verheiratet", "de": "verheiratet", "pos": "adj", "ua": "одружений, заміжня", "ex": "Bist du verheiratet?", "exUa": "Ти одружений?" },
+        { "id": "a1-ledig", "de": "ledig", "pos": "adj", "ua": "неодружений, незаміжня", "ex": "Nein, ich bin ledig.", "exUa": "Ні, я неодружений." },
+        { "id": "a1-freund", "de": "Freund", "art": "der", "pl": "Freunde", "pos": "n", "ua": "друг", "note": "жін.: die Freundin", "ex": "Das ist mein Freund Jonas.", "exUa": "Це мій друг Йонас." },
+        { "id": "a1-sprache", "de": "Sprache", "art": "die", "pl": "Sprachen", "pos": "n", "ua": "мова", "ex": "Ich spreche zwei Sprachen.", "exUa": "Я розмовляю двома мовами." },
+        { "id": "a1-sprechen", "de": "sprechen", "pos": "v", "forms": "du sprichst, er spricht", "ua": "розмовляти, говорити", "ex": "Sprichst du Deutsch?", "exUa": "Ти розмовляєш німецькою?" },
+        { "id": "a1-lernen", "de": "lernen", "pos": "v", "forms": "du lernst, er lernt", "ua": "вчити, вчитися", "ex": "Ich lerne Deutsch.", "exUa": "Я вчу німецьку." },
+        { "id": "a1-leben", "de": "leben", "pos": "v", "forms": "du lebst, er lebt", "ua": "жити (взагалі)", "note": "wohnen — де саме мешкаєш, leben — жити взагалі", "ex": "Wir leben in Deutschland.", "exUa": "Ми живемо в Німеччині." },
+        { "id": "a1-deutsch", "de": "Deutsch", "pos": "name", "ua": "німецька мова", "ex": "Deutsch ist nicht so schwer.", "exUa": "Німецька не така вже й складна." },
+        { "id": "a1-englisch", "de": "Englisch", "pos": "name", "ua": "англійська мова", "ex": "Sprechen Sie Englisch?", "exUa": "Ви розмовляєте англійською?" },
+        { "id": "a1-ukrainisch", "de": "Ukrainisch", "pos": "name", "ua": "українська мова", "ex": "Meine Mutter spricht Ukrainisch.", "exUa": "Моя мама розмовляє українською." },
+        { "id": "a1-oesterreich", "de": "Österreich", "pos": "name", "ua": "Австрія", "ex": "Wien ist in Österreich.", "exUa": "Відень — в Австрії." },
+        { "id": "a1-schweiz", "de": "Schweiz", "art": "die", "pl": null, "pos": "n", "ua": "Швейцарія", "note": "з артиклем: in der Schweiz", "ex": "Ich wohne in der Schweiz.", "exUa": "Я живу у Швейцарії." },
+        { "id": "a1-mein", "de": "mein", "alt": ["meine"], "pos": "pron", "ua": "мій, моя", "note": "meine — перед die і в множині", "ex": "Das ist meine Schwester.", "exUa": "Це моя сестра." },
+        { "id": "a1-dein", "de": "dein", "alt": ["deine"], "pos": "pron", "ua": "твій, твоя", "note": "deine — перед die і в множині", "ex": "Ist das dein Bruder?", "exUa": "Це твій брат?" },
+        { "id": "a1-ein-bisschen", "de": "ein bisschen", "pos": "phr", "ua": "трохи", "ex": "Ich spreche ein bisschen Englisch.", "exUa": "Я трохи розмовляю англійською." }
+      ],
+      "exercises": [
+        { "type": "choice", "q": "Das ist ___ Mutter.", "options": ["meine", "mein"], "answer": "meine", "explain": "die Mutter — жіночий рід, тому meine." },
+        { "type": "choice", "q": "Wo wohnt ___ Bruder?", "options": ["dein", "deine"], "answer": "dein", "explain": "der Bruder — чоловічий рід, тому dein без -e." },
+        { "type": "choice", "q": "Du ___ gut Deutsch.", "options": ["sprichst", "sprechst", "spricht"], "answer": "sprichst", "explain": "sprechen змінює e на i з du та er: du sprichst." },
+        { "type": "gap", "q": "Er ___ Ukrainisch und Englisch.", "hint": "sprechen", "answers": ["spricht"], "explain": "er spricht — e змінюється на i." },
+        { "type": "gap", "q": "Das sind ___ Eltern.", "hint": "мої", "answers": ["meine"], "explain": "У множині — meine." },
+        { "type": "choice", "q": "Ich komme ___ Österreich.", "options": ["aus", "in"], "answer": "aus", "explain": "Звідки? — aus. Де? — in." },
+        { "type": "choice", "q": "Sie wohnt ___ Schweiz.", "options": ["in der", "in", "aus der"], "answer": "in der", "explain": "die Schweiz — країна з артиклем, тому in der Schweiz." },
+        { "type": "order", "words": ["meine", "ist", "Das", "Schwester"], "answers": ["Das ist meine Schwester."], "ua": "Це моя сестра." },
+        { "type": "order", "words": ["du", "Sprichst", "Deutsch"], "answers": ["Sprichst du Deutsch?"], "ua": "Ти розмовляєш німецькою?" },
+        { "type": "translate", "ua": "Я трохи розмовляю німецькою.", "answers": ["Ich spreche ein bisschen Deutsch."] }
+      ],
+      "speak": [
+        { "type": "sentence", "ua": "Це моя мама.", "answers": ["Das ist meine Mutter.", "Das ist meine Mama."] },
+        { "type": "sentence", "ua": "Ти розмовляєш англійською?", "answers": ["Sprichst du Englisch?"] },
+        { "type": "sentence", "ua": "Я вчу німецьку.", "answers": ["Ich lerne Deutsch."] },
+        { "type": "sentence", "ua": "Мій брат живе в Австрії.", "answers": ["Mein Bruder wohnt in Österreich.", "Mein Bruder lebt in Österreich."] },
+        { "type": "question", "de": "Welche Sprachen sprichst du?", "ua": "Якими мовами ти розмовляєш?", "accept": ["ich spreche *", "*deutsch*", "*ukrainisch*", "*englisch*"], "example": "Ich spreche Ukrainisch und ein bisschen Deutsch." },
+        { "type": "question", "de": "Wie heißt deine Mutter?", "ua": "Як звати твою маму?", "accept": ["meine mutter heißt *", "meine mama heißt *", "sie heißt *"], "example": "Meine Mutter heißt Olena." }
+      ]
+    },
+    {
+      "id": "a1-04",
+      "num": 4,
+      "title": "Моя квартира",
+      "titleDe": "Die Wohnung ist schön!",
+      "topic": "Кімнати і меблі, описуємо речі: великий, світлий, дорогий.",
+      "scene": {
+        "title": "Нова квартира",
+        "lines": [
+          { "who": "Olena", "de": "Die Wohnung ist schön!", "ua": "Квартира гарна!" },
+          { "who": "Max", "de": "Danke! Das ist die Küche. Sie ist klein, aber hell.", "ua": "Дякую! Це кухня. Вона маленька, але світла." },
+          { "who": "Olena", "de": "Und das Zimmer?", "ua": "А кімната?" },
+          { "who": "Max", "de": "Es ist groß. Und das Sofa ist neu.", "ua": "Вона велика. А диван новий." },
+          { "who": "Max", "de": "Wie findest du die Lampe?", "ua": "Як тобі лампа?" },
+          { "who": "Olena", "de": "Sie ist sehr schön! Ist sie teuer?", "ua": "Дуже гарна! Вона дорога?" },
+          { "who": "Max", "de": "Nein, sie ist nicht teuer. Sie kostet zwanzig Euro.", "ua": "Ні, недорога. Вона коштує двадцять євро." },
+          { "who": "Olena", "de": "Und was kostet die Wohnung?", "ua": "А скільки коштує квартира?" },
+          { "who": "Max", "de": "Achthundert Euro.", "ua": "Вісімсот євро." },
+          { "who": "Olena", "de": "Oh, das ist teuer!", "ua": "Ого, це дорого!" }
+        ]
+      },
+      "fact": "У Німеччині квартиру часто здають **без кухні**: кухонні меблі й навіть плиту орендар купує сам і забирає з собою при переїзді. А в оголошенні «3-Zimmer-Wohnung» кухню й ванну не рахують.",
+      "grammar": [
+        {
+          "title": "Три роди: der, das, die",
+          "text": "Кожен іменник має рід: **der** (чоловічий), **das** (середній), **die** (жіночий). Інколи він збігається з українським (der Tisch — стіл), але часто ні: **der** Schrank — шафа, **das** Zimmer — кімната, **das** Sofa — диван.\nТому кожне слово вчимо **разом з артиклем**. Колір допомагає: der — синій, das — зелений, die — червоний."
+        },
+        {
+          "title": "er, es, sie — і для речей",
+          "text": "Займенник обираємо за родом німецького слова: Wie ist der Schrank? — **Er** ist alt. (Хоча українською шафа — «вона».)",
+          "table": [
+            ["der Tisch", "er"],
+            ["das Bett", "es"],
+            ["die Lampe", "sie"],
+            ["die Stühle (множина)", "sie"]
+          ]
+        },
+        {
+          "title": "Заперечення nicht",
+          "text": "**nicht** заперечує дієслово чи прикметник і стоїть після дієслова: Die Küche ist **nicht** groß. Ich wohne **nicht** hier."
+        },
+        {
+          "title": "Прикметник після sein",
+          "text": "Після sein прикметник **не змінюється**: Der Tisch ist neu. Die Lampe ist neu. Die Stühle sind neu."
+        }
+      ],
+      "words": [
+        { "id": "a1-wohnung", "de": "Wohnung", "art": "die", "pl": "Wohnungen", "pos": "n", "ua": "квартира", "ex": "Die Wohnung ist sehr schön.", "exUa": "Квартира дуже гарна." },
+        { "id": "a1-zimmer", "de": "Zimmer", "art": "das", "pl": "Zimmer", "pos": "n", "ua": "кімната", "ex": "Das Zimmer ist dunkel.", "exUa": "Кімната темна." },
+        { "id": "a1-kueche", "de": "Küche", "art": "die", "pl": "Küchen", "pos": "n", "ua": "кухня", "ex": "Die Küche ist hell.", "exUa": "Кухня світла." },
+        { "id": "a1-bad", "de": "Bad", "art": "das", "pl": "Bäder", "pos": "n", "ua": "ванна кімната", "ex": "Das Bad ist sehr klein.", "exUa": "Ванна кімната дуже маленька." },
+        { "id": "a1-tisch", "de": "Tisch", "art": "der", "pl": "Tische", "pos": "n", "ua": "стіл", "ex": "Der Tisch ist groß.", "exUa": "Стіл великий." },
+        { "id": "a1-stuhl", "de": "Stuhl", "art": "der", "pl": "Stühle", "pos": "n", "ua": "стілець", "ex": "Der Stuhl ist nicht teuer.", "exUa": "Стілець недорогий." },
+        { "id": "a1-bett", "de": "Bett", "art": "das", "pl": "Betten", "pos": "n", "ua": "ліжко", "ex": "Das Bett ist neu.", "exUa": "Ліжко нове." },
+        { "id": "a1-schrank", "de": "Schrank", "art": "der", "pl": "Schränke", "pos": "n", "ua": "шафа", "ex": "Der Schrank ist alt.", "exUa": "Шафа стара." },
+        { "id": "a1-sofa", "de": "Sofa", "art": "das", "pl": "Sofas", "pos": "n", "ua": "диван", "ex": "Das Sofa ist sehr schön.", "exUa": "Диван дуже гарний." },
+        { "id": "a1-lampe", "de": "Lampe", "art": "die", "pl": "Lampen", "pos": "n", "ua": "лампа", "ex": "Die Lampe kostet 30 Euro.", "exUa": "Лампа коштує 30 євро." },
+        { "id": "a1-kuehlschrank", "de": "Kühlschrank", "art": "der", "pl": "Kühlschränke", "pos": "n", "ua": "холодильник", "ex": "Der Kühlschrank ist sehr groß.", "exUa": "Холодильник дуже великий." },
+        { "id": "a1-fenster", "de": "Fenster", "art": "das", "pl": "Fenster", "pos": "n", "ua": "вікно", "ex": "Das Fenster ist groß.", "exUa": "Вікно велике." },
+        { "id": "a1-tuer", "de": "Tür", "art": "die", "pl": "Türen", "pos": "n", "ua": "двері", "note": "українською множина, німецькою однина", "ex": "Die Tür ist alt.", "exUa": "Двері старі." },
+        { "id": "a1-haus", "de": "Haus", "art": "das", "pl": "Häuser", "pos": "n", "ua": "будинок, дім", "ex": "Das Haus ist sehr alt.", "exUa": "Будинок дуже старий." },
+        { "id": "a1-schoen", "de": "schön", "pos": "adj", "ua": "гарний", "ex": "Wie findest du das Sofa? — Schön!", "exUa": "Як тобі диван? — Гарний!" },
+        { "id": "a1-gross", "de": "groß", "pos": "adj", "ua": "великий", "ex": "Berlin ist groß.", "exUa": "Берлін великий." },
+        { "id": "a1-klein", "de": "klein", "pos": "adj", "ua": "маленький", "ex": "Mein Zimmer ist klein.", "exUa": "Моя кімната маленька." },
+        { "id": "a1-neu", "de": "neu", "pos": "adj", "ua": "новий", "ex": "Der Stuhl ist neu.", "exUa": "Стілець новий." },
+        { "id": "a1-teuer", "de": "teuer", "pos": "adj", "ua": "дорогий", "ex": "Die Wohnung ist teuer.", "exUa": "Квартира дорога." },
+        { "id": "a1-billig", "de": "billig", "pos": "adj", "ua": "дешевий", "ex": "Das Sofa ist billig.", "exUa": "Диван дешевий." },
+        { "id": "a1-hell", "de": "hell", "pos": "adj", "ua": "світлий", "ex": "Die Wohnung ist hell.", "exUa": "Квартира світла." },
+        { "id": "a1-dunkel", "de": "dunkel", "pos": "adj", "ua": "темний", "ex": "Es ist schon dunkel.", "exUa": "Уже темно." },
+        { "id": "a1-nicht", "de": "nicht", "pos": "adv", "ua": "не", "ex": "Das ist nicht teuer.", "exUa": "Це недорого." },
+        { "id": "a1-sehr", "de": "sehr", "pos": "adv", "ua": "дуже", "ex": "Die Lampe ist sehr schön.", "exUa": "Лампа дуже гарна." },
+        { "id": "a1-aber", "de": "aber", "pos": "conj", "ua": "але", "ex": "Die Wohnung ist klein, aber schön.", "exUa": "Квартира маленька, але гарна." },
+        { "id": "a1-finden", "de": "finden", "pos": "v", "forms": "du findest, er findet", "ua": "знаходити; вважати", "note": "Wie findest du…? — Як тобі…?", "ex": "Wie findest du die Lampe?", "exUa": "Як тобі лампа?" },
+        { "id": "a1-kosten", "de": "kosten", "pos": "v", "forms": "es kostet", "ua": "коштувати", "ex": "Was kostet der Tisch?", "exUa": "Скільки коштує стіл?" },
+        { "id": "a1-euro", "de": "Euro", "art": "der", "pl": "Euro", "pos": "n", "ua": "євро", "ex": "Das kostet zehn Euro.", "exUa": "Це коштує десять євро." },
+        { "id": "a1-es", "de": "es", "pos": "pron", "ua": "воно", "ex": "Das Bett? Es ist neu.", "exUa": "Ліжко? Воно нове." }
+      ],
+      "exercises": [
+        { "type": "choice", "q": "___ Tisch ist neu.", "options": ["Der", "Das", "Die"], "answer": "Der", "explain": "der Tisch — чоловічий рід." },
+        { "type": "choice", "q": "___ Bett ist groß.", "options": ["Der", "Das", "Die"], "answer": "Das", "explain": "das Bett — середній рід." },
+        { "type": "choice", "q": "Die Lampe? ___ ist schön.", "options": ["Sie", "Er", "Es"], "answer": "Sie", "explain": "die Lampe → sie." },
+        { "type": "choice", "q": "Der Schrank? ___ ist alt.", "options": ["Er", "Sie", "Es"], "answer": "Er", "explain": "der Schrank → er. Українською шафа — «вона», але в німецькій рід інший." },
+        { "type": "gap", "q": "Die Küche ist ___ groß.", "hint": "не", "answers": ["nicht"], "explain": "Прикметник заперечуємо словом nicht." },
+        { "type": "gap", "q": "Wie ___ du das Sofa?", "hint": "finden", "answers": ["findest"], "explain": "Основа закінчується на -d, тому du findest." },
+        { "type": "choice", "q": "Die Stühle ___ neu.", "options": ["sind", "ist"], "answer": "sind", "explain": "Stühle — множина, тому sind." },
+        { "type": "order", "words": ["kostet", "Was", "Stuhl", "der"], "answers": ["Was kostet der Stuhl?"], "ua": "Скільки коштує стілець?" },
+        { "type": "order", "words": ["ist", "Wohnung", "nicht", "Die", "teuer"], "answers": ["Die Wohnung ist nicht teuer."], "ua": "Квартира недорога." },
+        { "type": "translate", "ua": "Кімната дуже світла.", "answers": ["Das Zimmer ist sehr hell."] }
+      ],
+      "speak": [
+        { "type": "sentence", "ua": "Квартира дуже гарна.", "answers": ["Die Wohnung ist sehr schön."] },
+        { "type": "sentence", "ua": "Скільки коштує лампа?", "answers": ["Was kostet die Lampe?", "Wie viel kostet die Lampe?"] },
+        { "type": "sentence", "ua": "Стіл не новий.", "answers": ["Der Tisch ist nicht neu."] },
+        { "type": "sentence", "ua": "Як тобі диван?", "answers": ["Wie findest du das Sofa?"] },
+        { "type": "question", "de": "Wie ist deine Wohnung?", "ua": "Яка в тебе квартира?", "accept": ["* ist *", "*groß*", "*klein*", "*schön*", "*hell*", "*dunkel*", "*neu*", "*alt*", "*teuer*", "*billig*"], "example": "Meine Wohnung ist klein, aber hell." }
+      ]
+    },
+    {
+      "id": "a1-05",
+      "num": 5,
+      "title": "Речі та кольори",
+      "titleDe": "Das ist kein Kuli!",
+      "topic": "Називаємо предмети навколо і їхні кольори.",
+      "scene": {
+        "title": "Де мій ключ?",
+        "lines": [
+          { "who": "Max", "de": "Olena, wo ist mein Schlüssel?", "ua": "Олено, де мій ключ?" },
+          { "who": "Olena", "de": "Ist das dein Schlüssel?", "ua": "Це твій ключ?" },
+          { "who": "Max", "de": "Nein, das ist kein Schlüssel. Das ist ein Kuli!", "ua": "Ні, це не ключ. Це ручка!" },
+          { "who": "Olena", "de": "Und was ist das?", "ua": "А це що?" },
+          { "who": "Max", "de": "Das ist meine Brille.", "ua": "Це мої окуляри." },
+          { "who": "Olena", "de": "Ist der Schlüssel grau?", "ua": "Ключ сірий?" },
+          { "who": "Max", "de": "Nein, er ist gelb.", "ua": "Ні, він жовтий." },
+          { "who": "Olena", "de": "Gelb? Hier! Das ist ein Schlüssel, und er ist gelb.", "ua": "Жовтий? Ось! Це ключ, і він жовтий." },
+          { "who": "Max", "de": "Ja! Danke, Olena!", "ua": "Так! Дякую, Олено!" }
+        ]
+      },
+      "fact": "**das Handy** звучить по-англійськи, але англійці так не кажуть: у них це mobile phone. А **Kuli** — розмовне скорочення від Kugelschreiber. Німці люблять скорочувати довгі слова.",
+      "grammar": [
+        {
+          "title": "ein, eine — неозначений артикль",
+          "text": "Неозначений артикль ставимо, коли предмет згадуємо вперше: Was ist das? — Das ist **ein** Handy. Означений — коли вже ясно, про що мова: **Das** Handy ist neu.",
+          "table": [
+            ["der", "ein Tisch"],
+            ["das", "ein Buch"],
+            ["die", "eine Lampe"],
+            ["множина", "Bücher (без артикля)"]
+          ]
+        },
+        {
+          "title": "kein, keine — «не» для іменника",
+          "text": "Іменник заперечуємо словом **kein**, а не nicht: Das ist **kein** Kuli, das ist ein Bleistift. Das ist **keine** Brille.",
+          "table": [
+            ["ein", "kein"],
+            ["eine", "keine"],
+            ["множина", "keine"]
+          ]
+        },
+        {
+          "title": "Складні слова",
+          "text": "Німецька любить склеювати слова. Рід складного слова — **за останньою частиною**: die Familie + der Name → **der** Familienname, das Telefon + die Nummer → **die** Telefonnummer, kühl + der Schrank → **der** Kühlschrank."
+        },
+        {
+          "title": "Das ist… / Das sind…",
+          "text": "У фразі «Це…» слово **das** не змінюється: Das ist ein Tisch. Das ist eine Lampe. А для множини — **sind**: Das sind Bücher."
+        }
+      ],
+      "words": [
+        { "id": "a1-kugelschreiber", "de": "Kugelschreiber", "alt": ["Kuli"], "art": "der", "pl": "Kugelschreiber", "pos": "n", "ua": "кулькова ручка", "note": "розмовне: der Kuli", "ex": "Der Kugelschreiber ist neu.", "exUa": "Ручка нова." },
+        { "id": "a1-bleistift", "de": "Bleistift", "art": "der", "pl": "Bleistifte", "pos": "n", "ua": "олівець", "ex": "Das ist ein Bleistift.", "exUa": "Це олівець." },
+        { "id": "a1-buch", "de": "Buch", "art": "das", "pl": "Bücher", "pos": "n", "ua": "книжка", "ex": "Das Buch ist interessant.", "exUa": "Книжка цікава." },
+        { "id": "a1-heft", "de": "Heft", "art": "das", "pl": "Hefte", "pos": "n", "ua": "зошит", "ex": "Das Heft ist grün.", "exUa": "Зошит зелений." },
+        { "id": "a1-papier", "de": "Papier", "art": "das", "pl": "Papiere", "pos": "n", "ua": "папір", "ex": "Hast du Papier?", "exUa": "У тебе є папір?" },
+        { "id": "a1-tasche", "de": "Tasche", "art": "die", "pl": "Taschen", "pos": "n", "ua": "сумка", "ex": "Die Tasche ist schwarz.", "exUa": "Сумка чорна." },
+        { "id": "a1-handy", "de": "Handy", "art": "das", "pl": "Handys", "pos": "n", "ua": "мобільний телефон", "ex": "Ist das dein Handy?", "exUa": "Це твій телефон?" },
+        { "id": "a1-computer", "de": "Computer", "art": "der", "pl": "Computer", "pos": "n", "ua": "комп’ютер", "ex": "Der Computer ist neu.", "exUa": "Комп’ютер новий." },
+        { "id": "a1-uhr", "de": "Uhr", "art": "die", "pl": "Uhren", "pos": "n", "ua": "годинник; година", "note": "Wie viel Uhr ist es? — Котра година?", "ex": "Die Uhr ist sehr teuer.", "exUa": "Годинник дуже дорогий." },
+        { "id": "a1-brille", "de": "Brille", "art": "die", "pl": "Brillen", "pos": "n", "ua": "окуляри", "note": "українською множина, німецькою однина", "ex": "Wo ist meine Brille?", "exUa": "Де мої окуляри?" },
+        { "id": "a1-schluessel", "de": "Schlüssel", "art": "der", "pl": "Schlüssel", "pos": "n", "ua": "ключ", "ex": "Ist das dein Schlüssel?", "exUa": "Це твій ключ?" },
+        { "id": "a1-flasche", "de": "Flasche", "art": "die", "pl": "Flaschen", "pos": "n", "ua": "пляшка", "ex": "Das ist eine Flasche Wasser.", "exUa": "Це пляшка води." },
+        { "id": "a1-foto", "de": "Foto", "art": "das", "pl": "Fotos", "pos": "n", "ua": "фото", "ex": "Das Foto ist schön.", "exUa": "Фото гарне." },
+        { "id": "a1-bild", "de": "Bild", "art": "das", "pl": "Bilder", "pos": "n", "ua": "картина, малюнок", "ex": "Das Bild ist sehr groß.", "exUa": "Картина дуже велика." },
+        { "id": "a1-fernseher", "de": "Fernseher", "art": "der", "pl": "Fernseher", "pos": "n", "ua": "телевізор", "ex": "Der Fernseher ist kaputt.", "exUa": "Телевізор зламаний." },
+        { "id": "a1-farbe", "de": "Farbe", "art": "die", "pl": "Farben", "pos": "n", "ua": "колір", "ex": "Die Farbe ist schön.", "exUa": "Колір гарний." },
+        { "id": "a1-rot", "de": "rot", "pos": "adj", "ua": "червоний", "ex": "Die Lampe ist rot.", "exUa": "Лампа червона." },
+        { "id": "a1-blau", "de": "blau", "pos": "adj", "ua": "синій, блакитний", "ex": "Mein Kuli ist blau.", "exUa": "Моя ручка синя." },
+        { "id": "a1-gruen", "de": "grün", "pos": "adj", "ua": "зелений", "ex": "Die Tür ist grün.", "exUa": "Двері зелені." },
+        { "id": "a1-gelb", "de": "gelb", "pos": "adj", "ua": "жовтий", "ex": "Das Taxi ist gelb.", "exUa": "Таксі жовте." },
+        { "id": "a1-schwarz", "de": "schwarz", "pos": "adj", "ua": "чорний", "ex": "Mein Handy ist schwarz.", "exUa": "Мій телефон чорний." },
+        { "id": "a1-weiss", "de": "weiß", "pos": "adj", "ua": "білий", "ex": "Das Sofa ist weiß.", "exUa": "Диван білий." },
+        { "id": "a1-grau", "de": "grau", "pos": "adj", "ua": "сірий", "ex": "Der Computer ist grau.", "exUa": "Комп’ютер сірий." },
+        { "id": "a1-braun", "de": "braun", "pos": "adj", "ua": "коричневий", "ex": "Der Tisch ist braun.", "exUa": "Стіл коричневий." },
+        { "id": "a1-kein", "de": "kein", "alt": ["keine"], "pos": "pron", "ua": "не (жоден), ніякий", "note": "keine — перед die і в множині", "ex": "Das ist kein Handy.", "exUa": "Це не телефон." },
+        { "id": "a1-was", "de": "was", "pos": "pron", "ua": "що", "ex": "Was ist das?", "exUa": "Що це?" }
+      ],
+      "exercises": [
+        { "type": "choice", "q": "Das ist ___ Handy.", "options": ["ein", "eine"], "answer": "ein", "explain": "das Handy → ein." },
+        { "type": "choice", "q": "Das ist ___ Tasche.", "options": ["eine", "ein"], "answer": "eine", "explain": "die Tasche → eine." },
+        { "type": "choice", "q": "Das ist ___ Bleistift, das ist ein Kuli.", "options": ["kein", "keine", "nicht"], "answer": "kein", "explain": "Іменник заперечуємо словом kein. der Bleistift → kein." },
+        { "type": "choice", "q": "Das ist ___ Brille, das ist eine Uhr.", "options": ["keine", "kein", "nicht"], "answer": "keine", "explain": "die Brille → keine." },
+        { "type": "gap", "q": "Was ist das? — Das ist ___ Buch.", "hint": "ein чи eine", "answers": ["ein"], "explain": "das Buch → ein Buch." },
+        { "type": "choice", "q": "die Familie + der Name = ___ Familienname", "options": ["der", "die", "das"], "answer": "der", "say": "der Familienname", "explain": "Рід складного слова — за останньою частиною: der Name." },
+        { "type": "choice", "q": "Das ___ Bücher.", "options": ["sind", "ist"], "answer": "sind", "explain": "Для множини кажемо: Das sind…" },
+        { "type": "order", "words": ["ist", "Das", "Schlüssel", "kein"], "answers": ["Das ist kein Schlüssel."], "ua": "Це не ключ." },
+        { "type": "order", "words": ["meine", "Wo", "Brille", "ist"], "answers": ["Wo ist meine Brille?"], "ua": "Де мої окуляри?" },
+        { "type": "translate", "ua": "Сумка чорна.", "answers": ["Die Tasche ist schwarz."] }
+      ],
+      "speak": [
+        { "type": "sentence", "ua": "Що це?", "answers": ["Was ist das?"] },
+        { "type": "sentence", "ua": "Це не олівець.", "answers": ["Das ist kein Bleistift."] },
+        { "type": "sentence", "ua": "Мій телефон чорний.", "answers": ["Mein Handy ist schwarz."] },
+        { "type": "sentence", "ua": "Де мої окуляри?", "answers": ["Wo ist meine Brille?"] },
+        { "type": "question", "de": "Welche Farbe hat dein Handy?", "ua": "Якого кольору твій телефон?", "accept": ["*schwarz*", "*weiß*", "*rot*", "*blau*", "*grün*", "*gelb*", "*grau*", "*braun*"], "example": "Mein Handy ist schwarz." }
+      ]
+    },
+    {
+      "id": "a1-06",
+      "num": 6,
+      "title": "В офісі",
+      "titleDe": "Im Büro",
+      "topic": "Робочі справи і предмети. Множина іменників і знахідний відмінок.",
+      "scene": {
+        "title": "Понеділок в офісі",
+        "lines": [
+          { "who": "Herr Braun", "de": "Guten Morgen, Frau Kowalenko! Haben Sie heute viel Arbeit?", "ua": "Доброго ранку, пані Коваленко! У вас сьогодні багато роботи?" },
+          { "who": "Olena", "de": "Ja, sehr viel. Ich habe heute drei Termine.", "ua": "Так, дуже багато. У мене сьогодні три зустрічі." },
+          { "who": "Herr Braun", "de": "Ich brauche den Brief. Wo ist er?", "ua": "Мені потрібен той лист. Де він?" },
+          { "who": "Olena", "de": "Hier, bitte. Und ich habe eine Frage.", "ua": "Ось, будь ласка. І в мене є питання." },
+          { "who": "Herr Braun", "de": "Ja?", "ua": "Так?" },
+          { "who": "Olena", "de": "Mein Computer ist kaputt. Ich brauche einen Computer.", "ua": "Мій комп’ютер зламався. Мені потрібен комп’ютер." },
+          { "who": "Herr Braun", "de": "Kein Problem. Mein Kollege hat zwei Computer.", "ua": "Без проблем. У мого колеги два комп’ютери." },
+          { "who": "Olena", "de": "Danke! Das ist wichtig.", "ua": "Дякую! Це важливо." }
+        ]
+      },
+      "fact": "Опівдні в німецьких офісах колеги вітаються одним словом: **Mahlzeit!** Дослівно це «час їсти», а означає щось на зразок «смачного обіду».",
+      "grammar": [
+        {
+          "title": "Множина",
+          "text": "У множині артикль завжди **die**. Закінчення множини треба вчити разом зі словом, тому на картках вона завжди є.",
+          "table": [
+            ["-e", "der Tisch → die Tische"],
+            ["¨-e", "der Stuhl → die Stühle"],
+            ["-(e)n", "die Lampe → die Lampen"],
+            ["-er, ¨-er", "das Kind → die Kinder, das Buch → die Bücher"],
+            ["-s", "das Foto → die Fotos"],
+            ["без закінчення", "der Lehrer → die Lehrer, der Vater → die Väter"]
+          ]
+        },
+        {
+          "title": "haben",
+          "text": "Ich **habe** eine Frage. **Hast** du Zeit? Er **hat** ein Problem.",
+          "table": [
+            ["ich", "habe"],
+            ["du", "hast"],
+            ["er, sie, es", "hat"],
+            ["wir", "haben"],
+            ["ihr", "habt"],
+            ["sie, Sie", "haben"]
+          ]
+        },
+        {
+          "title": "Akkusativ: кого? що?",
+          "text": "Після haben, brauchen, suchen, lesen, schreiben іменник стоїть у знахідному відмінку. Змінюється **тільки чоловічий рід**: Ich brauche **einen** Computer. Ich habe **keinen** Kuli. Ich suche **den** Schlüssel.",
+          "table": [
+            ["", "Nominativ", "Akkusativ"],
+            ["der", "der, ein, kein", "**den, einen, keinen**"],
+            ["das", "das, ein, kein", "das, ein, kein"],
+            ["die", "die, eine, keine", "die, eine, keine"],
+            ["множина", "die, —, keine", "die, —, keine"]
+          ]
+        }
+      ],
+      "words": [
+        { "id": "a1-buero", "de": "Büro", "art": "das", "pl": "Büros", "pos": "n", "ua": "офіс", "ex": "Mein Büro ist klein.", "exUa": "Мій офіс маленький." },
+        { "id": "a1-kollege", "de": "Kollege", "art": "der", "pl": "Kollegen", "pos": "n", "ua": "колега", "note": "жін.: die Kollegin", "ex": "Mein Kollege heißt Tim.", "exUa": "Мого колегу звати Тім." },
+        { "id": "a1-chef", "de": "Chef", "art": "der", "pl": "Chefs", "pos": "n", "ua": "начальник", "note": "жін.: die Chefin", "ex": "Der Chef ist heute nicht hier.", "exUa": "Начальника сьогодні немає." },
+        { "id": "a1-termin", "de": "Termin", "art": "der", "pl": "Termine", "pos": "n", "ua": "зустріч (за домовленістю), запис", "ex": "Ich habe heute einen Termin.", "exUa": "У мене сьогодні зустріч." },
+        { "id": "a1-e-mail", "de": "E-Mail", "alt": ["Email", "Mail"], "art": "die", "pl": "E-Mails", "pos": "n", "ua": "електронний лист", "ex": "Ich schreibe eine E-Mail.", "exUa": "Я пишу електронного листа." },
+        { "id": "a1-brief", "de": "Brief", "art": "der", "pl": "Briefe", "pos": "n", "ua": "лист (паперовий)", "ex": "Der Brief ist für dich.", "exUa": "Лист для тебе." },
+        { "id": "a1-formular", "de": "Formular", "art": "das", "pl": "Formulare", "pos": "n", "ua": "бланк, анкета", "ex": "Das Formular ist wichtig.", "exUa": "Цей бланк важливий." },
+        { "id": "a1-pause", "de": "Pause", "art": "die", "pl": "Pausen", "pos": "n", "ua": "перерва", "ex": "Wir machen jetzt Pause.", "exUa": "Зараз у нас перерва." },
+        { "id": "a1-wort", "de": "Wort", "art": "das", "pl": "Wörter", "pos": "n", "ua": "слово", "ex": "Das Wort ist neu.", "exUa": "Це слово нове." },
+        { "id": "a1-frage", "de": "Frage", "art": "die", "pl": "Fragen", "pos": "n", "ua": "питання", "ex": "Ich habe eine Frage.", "exUa": "У мене є питання." },
+        { "id": "a1-antwort", "de": "Antwort", "art": "die", "pl": "Antworten", "pos": "n", "ua": "відповідь", "ex": "Die Antwort ist richtig.", "exUa": "Відповідь правильна." },
+        { "id": "a1-problem", "de": "Problem", "art": "das", "pl": "Probleme", "pos": "n", "ua": "проблема", "ex": "Kein Problem!", "exUa": "Без проблем!" },
+        { "id": "a1-haben", "de": "haben", "pos": "v", "forms": "du hast, er hat", "ua": "мати", "ex": "Hast du einen Computer?", "exUa": "У тебе є комп’ютер?" },
+        { "id": "a1-brauchen", "de": "brauchen", "pos": "v", "forms": "du brauchst, er braucht", "ua": "потребувати", "ex": "Ich brauche einen Kuli.", "exUa": "Мені потрібна ручка." },
+        { "id": "a1-suchen", "de": "suchen", "pos": "v", "forms": "du suchst, er sucht", "ua": "шукати", "ex": "Ich suche den Schlüssel.", "exUa": "Я шукаю ключ." },
+        { "id": "a1-schreiben", "de": "schreiben", "pos": "v", "forms": "du schreibst, er schreibt", "ua": "писати", "ex": "Er schreibt einen Brief.", "exUa": "Він пише листа." },
+        { "id": "a1-lesen", "de": "lesen", "pos": "v", "forms": "du liest, er liest", "ua": "читати", "ex": "Ich lese ein Buch.", "exUa": "Я читаю книжку." },
+        { "id": "a1-machen", "de": "machen", "pos": "v", "forms": "du machst, er macht", "ua": "робити", "ex": "Was machst du?", "exUa": "Що ти робиш?" },
+        { "id": "a1-fragen", "de": "fragen", "pos": "v", "forms": "du fragst, er fragt", "ua": "питати", "ex": "Ich frage den Lehrer.", "exUa": "Я питаю вчителя." },
+        { "id": "a1-antworten", "de": "antworten", "pos": "v", "forms": "du antwortest, er antwortet", "ua": "відповідати", "ex": "Er antwortet nicht.", "exUa": "Він не відповідає." },
+        { "id": "a1-heute", "de": "heute", "pos": "adv", "ua": "сьогодні", "ex": "Heute arbeite ich nicht.", "exUa": "Сьогодні я не працюю." },
+        { "id": "a1-morgen", "de": "morgen", "pos": "adv", "ua": "завтра", "ex": "Bis morgen!", "exUa": "До завтра!" },
+        { "id": "a1-viel", "de": "viel", "pos": "adv", "ua": "багато", "ex": "Ich habe viel Arbeit.", "exUa": "У мене багато роботи." },
+        { "id": "a1-wenig", "de": "wenig", "pos": "adv", "ua": "мало", "ex": "Er spricht wenig.", "exUa": "Він мало говорить." },
+        { "id": "a1-kaputt", "de": "kaputt", "pos": "adj", "ua": "зламаний", "ex": "Der Computer ist kaputt.", "exUa": "Комп’ютер зламався." },
+        { "id": "a1-wichtig", "de": "wichtig", "pos": "adj", "ua": "важливий", "ex": "Der Termin ist wichtig.", "exUa": "Зустріч важлива." },
+        { "id": "a1-richtig", "de": "richtig", "pos": "adj", "ua": "правильний", "ex": "Das ist richtig!", "exUa": "Це правильно!" },
+        { "id": "a1-falsch", "de": "falsch", "pos": "adj", "ua": "неправильний", "ex": "Das Wort ist falsch.", "exUa": "Це слово неправильне." }
+      ],
+      "exercises": [
+        { "type": "choice", "q": "Ich brauche ___ Computer.", "options": ["einen", "ein", "eine"], "answer": "einen", "explain": "der Computer у знахідному відмінку → einen." },
+        { "type": "choice", "q": "Ich habe ___ Problem.", "options": ["ein", "einen", "eine"], "answer": "ein", "explain": "das Problem — середній рід, у знахідному відмінку не змінюється." },
+        { "type": "choice", "q": "Er ___ eine Frage.", "options": ["hat", "hast", "habe"], "answer": "hat", "explain": "haben: er hat." },
+        { "type": "gap", "q": "Ich suche ___ Schlüssel.", "hint": "der → ?", "answers": ["den"], "explain": "der Schlüssel у знахідному відмінку → den Schlüssel." },
+        { "type": "gap", "q": "Ich habe ___ Kuli.", "hint": "kein → ?", "answers": ["keinen"], "explain": "der Kuli у знахідному відмінку → keinen Kuli." },
+        { "type": "gap", "q": "Du ___ ein Buch.", "hint": "lesen", "answers": ["liest"], "explain": "lesen: e → ie, du liest." },
+        { "type": "choice", "q": "das Buch → die ___", "options": ["Bücher", "Buchs", "Buchen"], "answer": "Bücher", "say": "die Bücher", "explain": "Множина з умлаутом і -er: die Bücher." },
+        { "type": "choice", "q": "die Frage → die ___", "options": ["Fragen", "Frages", "Fräge"], "answer": "Fragen", "say": "die Fragen", "explain": "Слова на -e у множині отримують -n: die Fragen." },
+        { "type": "order", "words": ["brauche", "einen", "Ich", "Termin"], "answers": ["Ich brauche einen Termin.", "Einen Termin brauche ich."], "ua": "Мені потрібен запис." },
+        { "type": "translate", "ua": "У мене є питання.", "answers": ["Ich habe eine Frage."] }
+      ],
+      "speak": [
+        { "type": "sentence", "ua": "Без проблем!", "answers": ["Kein Problem!"] },
+        { "type": "sentence", "ua": "У мене є питання.", "answers": ["Ich habe eine Frage."] },
+        { "type": "sentence", "ua": "Мені потрібна ручка.", "answers": ["Ich brauche einen Kugelschreiber.", "Ich brauche einen Kuli.", "Ich brauche einen Stift."] },
+        { "type": "sentence", "ua": "Що ти робиш?", "answers": ["Was machst du?"] },
+        { "type": "question", "de": "Was machst du heute?", "ua": "Що ти робиш сьогодні?", "accept": ["ich *", "heute *"], "example": "Heute lerne ich Deutsch." }
+      ]
+    },
+    { "id": "a1-07", "num": 7, "planned": true, "title": "Хобі та вміння", "titleDe": "Was machst du gern?", "topic": "Вільний час, хобі, що я вмію.", "grammarPlan": ["Модальне дієслово können", "Рамкова конструкція: Ich kann gut schwimmen.", "Зміна голосної: fahren, lesen, sehen, treffen"] },
+    { "id": "a1-08", "num": 8, "planned": true, "title": "Час і зустрічі", "titleDe": "Hast du morgen Zeit?", "topic": "Котра година, дні тижня, домовляємося про зустріч.", "grammarPlan": ["Котра година: офіційно і в розмові", "Прийменники часу am, um, von … bis", "Дні тижня і частини дня"] },
+    { "id": "a1-09", "num": 9, "planned": true, "title": "Їжа та напої", "titleDe": "Guten Appetit!", "topic": "Продукти, сніданок, обід і вечеря, покупки.", "grammarPlan": ["Порядок слів: дієслово на другому місці", "ja, nein, doch", "möchten"] },
+    { "id": "a1-10", "num": 10, "planned": true, "title": "Мій день", "titleDe": "Mein Tag", "topic": "Розпорядок дня і транспорт.", "grammarPlan": ["Відокремлювані дієслова: aufstehen, einkaufen, anrufen", "mit + Dativ: mit dem Bus"] },
+    { "id": "a1-11", "num": 11, "planned": true, "title": "Що ти робив?", "titleDe": "Was hast du gemacht?", "topic": "Розповідаємо про минулий день.", "grammarPlan": ["Perfekt з haben", "Partizip II правильних і неправильних дієслів"] },
+    { "id": "a1-12", "num": 12, "planned": true, "title": "Куди ти їздив?", "titleDe": "Wohin bist du gefahren?", "topic": "Поїздки і події в минулому.", "grammarPlan": ["Perfekt з sein", "Partizip II відокремлюваних дієслів"] },
+    { "id": "a1-13", "num": 13, "planned": true, "title": "У місті", "titleDe": "Wo ist der Bahnhof?", "topic": "Орієнтуємося в місті, питаємо дорогу.", "grammarPlan": ["Прийменники з Dativ: Wo? in, an, auf, neben, vor, hinter", "Порядкові числівники: die erste Straße"] },
+    { "id": "a1-14", "num": 14, "planned": true, "title": "Житло", "titleDe": "Wohnen in der Stadt", "topic": "Шукаємо квартиру, читаємо оголошення.", "grammarPlan": ["Присвійні артиклі: sein, ihr, unser, euer", "Скорочення в оголошеннях"] },
+    { "id": "a1-15", "num": 15, "planned": true, "title": "Друзі", "titleDe": "Kennst du ihn?", "topic": "Друзі, знайомі, запрошення.", "grammarPlan": ["Особові займенники в Akkusativ: mich, dich, ihn, sie, es"] },
+    { "id": "a1-16", "num": 16, "planned": true, "title": "Правила", "titleDe": "Was darf man hier?", "topic": "Що можна і що треба: правила вдома, у школі, на роботі.", "grammarPlan": ["Модальні дієслова müssen і dürfen"] },
+    { "id": "a1-17", "num": 17, "planned": true, "title": "Свята і подарунки", "titleDe": "Alles Gute!", "topic": "Дні народження, свята, дата.", "grammarPlan": ["Dativ: mir, dir, ihm, ihr", "Дата: am ersten Mai"] },
+    { "id": "a1-18", "num": 18, "planned": true, "title": "Погода", "titleDe": "Wie war das Wetter?", "topic": "Погода, пори року, місяці.", "grammarPlan": ["Präteritum: war, hatte", "Місяці та пори року"] },
+    { "id": "a1-19", "num": 19, "planned": true, "title": "Здоров’я", "titleDe": "Mir geht's nicht gut", "topic": "Тіло, хвороба, у лікаря.", "grammarPlan": ["Модальне дієслово sollen", "Імператив: Sie-форма"] },
+    { "id": "a1-20", "num": 20, "planned": true, "title": "Одяг", "titleDe": "Welche Jacke gefällt dir?", "topic": "Одяг, купуємо речі.", "grammarPlan": ["welch- і dies-", "Дієслова з Dativ: gefallen, passen, stehen"] },
+    { "id": "a1-21", "num": 21, "planned": true, "title": "Подорожі", "titleDe": "Wir wollen reisen", "topic": "Плануємо поїздку, вокзал, готель.", "grammarPlan": ["Модальне дієслово wollen", "Куди? nach, in, an"] },
+    { "id": "a1-22", "num": 22, "planned": true, "title": "Прохання", "titleDe": "Können Sie mir helfen?", "topic": "Ввічливо просимо про допомогу.", "grammarPlan": ["Ввічливі прохання: Könnten Sie …?", "Імператив: du і ihr"] },
+    { "id": "a1-23", "num": 23, "planned": true, "title": "Що краще?", "titleDe": "Lieber Tee oder Kaffee?", "topic": "Порівнюємо і кажемо, що подобається більше.", "grammarPlan": ["gern, lieber, am liebsten", "gut, besser, am besten"] },
+    { "id": "a1-24", "num": 24, "planned": true, "title": "Повторення A1", "titleDe": "Fit für A1", "topic": "Повторюємо все і готуємося до іспиту Goethe-Zertifikat A1.", "grammarPlan": ["Повторення граматики A1", "Формат іспиту Start Deutsch 1"] }
+  ]
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Гра-подорож поїздом по урокам німецької.">
+  <title>Папірланд-Експрес</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111830'/%3E%3Crect x='7' y='8' width='4.5' height='16' rx='1' fill='%2382a8ff'/%3E%3Crect x='13.75' y='8' width='4.5' height='16' rx='1' fill='%234fd18b'/%3E%3Crect x='20.5' y='8' width='4.5' height='16' rx='1' fill='%23ff8073'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=Fira+Sans+Extra+Condensed:wght@600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/game.css">
+  <!-- three.js 0.160.0 лежить у js/vendor/ (скачано з jsdelivr), щоб гра вантажилась швидко й без інтернету -->
+  <script type="importmap">
+    { "imports": { "three": "./js/vendor/three.module.min.js" } }
+  </script>
+</head>
+<body class="game">
+  <canvas id="world" aria-label="Карта уроків: залізниця зі станціями"></canvas>
+
+  <header class="hud">
+    <a class="hud-title" href="index.html" title="Повернутися на сайт">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Папірланд-<b>Експрес</b></span>
+    </a>
+    <div id="hud-stats" class="hud-stats"></div>
+    <a class="btn btn-marker hud-express" href="#/stress" title="Стрес-тест на швидкість">Експрес ⚡</a>
+  </header>
+
+  <section id="station" class="station-card" aria-live="polite"><p class="muted">Завантаження…</p></section>
+  <p class="hint">← → або клік по станції — їхати · клік по своїй станції — зайти</p>
+
+  <div id="overlay" class="overlay" hidden>
+    <button id="overlay-close" class="overlay-close" type="button" aria-label="Повернутися до поїзда">✕ До поїзда</button>
+    <main id="app" class="app" tabindex="-1"></main>
+  </div>
+
+  <script type="module" src="js/game/main.js"></script>
+</body>
+</html>

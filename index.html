@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Особистий тренажер німецької: картки, вправи і стрес-тест голосом.">
+  <meta name="theme-color" content="#fbfcfa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111830" media="(prefers-color-scheme: dark)">
+  <title>Deutsch-Trainer</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111830'/%3E%3Crect x='7' y='8' width='4.5' height='16' rx='1' fill='%2382a8ff'/%3E%3Crect x='13.75' y='8' width='4.5' height='16' rx='1' fill='%234fd18b'/%3E%3Crect x='20.5' y='8' width='4.5' height='16' rx='1' fill='%23ff8073'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=Fira+Sans+Extra+Condensed:wght@600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/" aria-label="Deutsch-Trainer, головна">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="brand-name">Deutsch-Trainer</span>
+    </a>
+    <nav class="tabbar" aria-label="Розділи">
+      <a class="tab" data-tab="home" href="#/"><span>Головна</span></a>
+      <a class="tab" data-tab="lessons" href="#/lessons"><span>Уроки</span></a>
+      <a class="tab" data-tab="cards" href="#/cards"><span>Картки</span></a>
+      <a class="tab" data-tab="stress" href="#/stress"><span>Стрес-тест</span></a>
+      <a class="tab" data-tab="game" href="game.html"><span>Гра</span></a>
+      <a class="tab" data-tab="settings" href="#/settings"><span>Параметри</span></a>
+    </nav>
+    <span id="streak" class="streak-chip" role="img"></span>
+  </header>
+
+  <main id="app" class="app" tabindex="-1">
+    <p class="muted">Завантаження…</p>
+  </main>
+
+  <script>
+    // Якщо головний скрипт не запустився (наприклад, сайт відкрили подвійним кліком як файл),
+    // показуємо, як його правильно запустити.
+    setTimeout(function () {
+      if (window.__dtStarted) return;
+      document.getElementById('app').innerHTML =
+        '<section class="error-box"><h1>Сайт не запустився</h1>' +
+        '<p>Його треба відкривати через локальний сервер. У папці проєкту виконай команду ' +
+        '<code>python3 -m http.server 8000</code> і відкрий у браузері <b>http://localhost:8000</b>.</p></section>';
+    }, 2500);
+  </script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# Секрети ніколи не комітимо
+.env
+*.key
+secrets*
+
+# Резервні копії прогресу
+deutsch-trainer-*.json
+
+# Системне сміття
+.DS_Store
+Thumbs.db
+__pycache__/

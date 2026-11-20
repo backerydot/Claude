@@ -1,0 +1,6 @@
+[
+  { "id": "A1", "name": "Початковий", "file": "data/a1.json", "plannedLessons": 24 },
+  { "id": "A2", "name": "Елементарний", "file": null, "plannedLessons": 24 },
+  { "id": "B1", "name": "Середній", "file": null, "plannedLessons": 24 },
+  { "id": "B1+", "name": "Впевнений середній", "file": null, "plannedLessons": 10 }
+]
