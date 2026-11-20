@@ -60,7 +60,7 @@ function renderPanel() {
   const pct = Math.round(s.progress * 100);
   let body;
   if (s.state === 'planned') {
-    body = '<p class="muted">Ця станція ще будується: урок буде пізніше.</p>';
+    body = '<p class="muted">Ця станція ще будується: урок буде пізніше</p>';
   } else if (s.state === 'locked') {
     const prev = stations[world.current - 1];
     body = `<p class="muted">Закрито. Пройди станцію ${prev.num} хоча б на ${UNLOCK * 100}%.</p>`;
@@ -75,10 +75,10 @@ function renderPanel() {
   }
   panel.innerHTML = `
     <div class="st-head">
-      <button class="st-nav" type="button" data-go="-1" aria-label="Попередня станція" ${world.current === 0 ? 'disabled' : ''}>‹</button>
+      <button class="st-nav" type="button" data-go="-1" aria-label="Попередня станція" ${world.current === 0 ? 'disabled' : ''}>${icon('back')}</button>
       <span class="lesson-num">${s.num}</span>
       <div class="st-title"><b lang="de">${esc(s.titleDe)}</b><span>${esc(s.title)}</span></div>
-      <button class="st-nav" type="button" data-go="1" aria-label="Наступна станція" ${world.current === stations.length - 1 ? 'disabled' : ''}>›</button>
+      <button class="st-nav" type="button" data-go="1" aria-label="Наступна станція" ${world.current === stations.length - 1 ? 'disabled' : ''}>${icon('next')}</button>
     </div>${body}`;
 }
 
@@ -89,8 +89,8 @@ function renderHud() {
   const done = stations.filter((s) => s.state === 'done').length;
   $('#hud-stats').innerHTML = `
     <span class="streak-chip ${n ? 'is-on' : ''}" title="Стрік">${icon('flame')}<span>${n}</span></span>
-    <span class="hud-chip" title="Пройдені станції">🚩 ${done}/${stations.length}</span>
-    ${due ? `<a class="hud-chip hud-due" href="#/cards">${due} ${plural(due, 'картка', 'картки', 'карток')} на повтор</a>` : ''}`;
+    <span class="hud-chip" title="Пройдені станції">${icon('flag')}${done}/${stations.length}</span>
+    ${due ? `<a class="hud-chip hud-due" href="#/cards" title="${due} ${plural(due, 'картка', 'картки', 'карток')} на повторення">${due} на повтор</a>` : ''}`;
 }
 
 function refresh() {
@@ -148,6 +148,8 @@ function closeOverlay() {
 
 async function init() {
   installGlobalHandlers();
+  $('.hud-express').insertAdjacentHTML('afterbegin', icon('stress'));
+  $('#overlay-close').insertAdjacentHTML('afterbegin', icon('back'));
   try {
     content = await loadContent();
   } catch (err) {

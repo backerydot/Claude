@@ -91,7 +91,7 @@ body {
 h1,
 h2,
 h3 {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   line-height: 1.2;
   font-weight: 600;
 }
@@ -106,7 +106,7 @@ h2 {
 }
 
 h3 {
-  font-size: 17px;
+  font-size: 16px;
 }
 
 p {
@@ -123,7 +123,7 @@ b {
 
 code {
   font-size: 0.95em;
-  padding: 1px 6px;
+  padding: 1px 4px;
   border-radius: 4px;
   background: var(--marker-soft);
 }
@@ -161,7 +161,7 @@ code {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 10px 16px;
+  padding: 12px 16px;
   background: var(--paper);
   border-bottom: 1px solid var(--rule);
 }
@@ -169,7 +169,7 @@ code {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-weight: 600;
   text-decoration: none;
 }
@@ -195,7 +195,7 @@ code {
   gap: 4px;
   min-width: 52px;
   justify-content: center;
-  padding: 4px 10px;
+  padding: 4px 12px;
   font-weight: 600;
   color: var(--ink-3);
   border: 1.5px solid var(--rule);
@@ -302,7 +302,7 @@ body.focus-mode .app {
     flex-direction: row;
     gap: 8px;
     padding: 8px 12px;
-    font-size: 15px;
+    font-size: 14px;
     border-radius: 8px;
   }
 
@@ -332,7 +332,7 @@ body.focus-mode .app {
   justify-content: center;
   gap: 8px;
   min-height: 48px;
-  padding: 11px 20px;
+  padding: 8px 20px;
   font: inherit;
   font-weight: 600;
   color: var(--ink);
@@ -389,7 +389,7 @@ body.focus-mode .app {
 
 .btn-big {
   min-height: 60px;
-  padding: 14px 40px;
+  padding: 12px 40px;
   font-size: 20px;
 }
 
@@ -401,7 +401,7 @@ body.focus-mode .app {
 .row-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   margin: 16px 0;
 }
 
@@ -468,8 +468,8 @@ body.focus-mode .app {
 .legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 18px;
-  font-size: 15px;
+  gap: 4px 16px;
+  font-size: 14px;
   color: var(--ink-2);
 }
 
@@ -488,7 +488,7 @@ body.focus-mode .app {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .session-top .back {
@@ -515,9 +515,10 @@ body.focus-mode .app {
 .progress-line i {
   display: block;
   height: 100%;
-  width: calc(var(--p) * 100%);
   background: var(--ink);
-  transition: width 0.3s ease;
+  transform: scaleX(var(--p));
+  transform-origin: left center;
+  transition: transform 0.3s ease-out;
 }
 
 .done {
@@ -533,17 +534,17 @@ body.focus-mode .app {
 /* ---------- Головна ---------- */
 
 .greet {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--ink-2);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .hero-word {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
 }
 
 .hero-word .word {
@@ -554,20 +555,20 @@ body.focus-mode .app {
 }
 
 .hero-ua {
-  font-size: 19px;
+  font-size: 20px;
   color: var(--ink-2);
-  margin: 6px 0 22px;
+  margin: 8px 0 24px;
 }
 
 .today-line {
-  font-size: 17px;
+  font-size: 18px;
   max-width: 34em;
 }
 
 .week {
   display: grid;
   grid-template-columns: repeat(7, 40px);
-  margin: 4px 0 14px;
+  margin: 4px 0 12px;
 }
 
 .day {
@@ -575,7 +576,7 @@ body.focus-mode .app {
   place-items: center;
   height: 40px;
   margin: 0 -1px -1px 0;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--ink-3);
   background: var(--paper);
   border: 1px solid var(--rule);
@@ -637,22 +638,22 @@ body.focus-mode .app {
 
 .de {
   display: block;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--ink-2);
 }
 
 /* Карта прогресу: кожна клітинка — урок */
 .level {
-  padding: 14px 0 18px;
+  padding: 16px 0 20px;
   border-top: 1px solid var(--rule);
 }
 
 .level-head {
   display: flex;
   align-items: baseline;
-  gap: 10px;
+  gap: 8px;
   max-width: 480px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .level-name {
@@ -664,13 +665,13 @@ body.focus-mode .app {
 }
 
 .level-title {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--ink-2);
 }
 
 .level-meta {
   margin-left: auto;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--ink-2);
   font-variant-numeric: tabular-nums;
 }
@@ -696,7 +697,7 @@ body.focus-mode .app {
   position: absolute;
   top: 1px;
   left: 3px;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.2;
   color: var(--ink-3);
 }
@@ -731,7 +732,7 @@ a.cell:hover {
   grid-template-columns: 40px 1fr auto;
   align-items: center;
   gap: 12px;
-  padding: 14px 4px;
+  padding: 16px 4px;
   text-decoration: none;
   border-bottom: 1px solid var(--rule);
 }
@@ -763,7 +764,7 @@ a.cell:hover {
 
 .bar {
   display: block;
-  height: 6px;
+  height: 4px;
   margin-top: 8px;
   max-width: 280px;
   background: var(--rule);
@@ -782,7 +783,7 @@ a.cell:hover {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: start;
-  gap: 14px;
+  gap: 12px;
   margin-top: 8px;
 }
 
@@ -798,8 +799,8 @@ a.cell:hover {
 }
 
 .topic {
-  margin-top: 14px;
-  font-size: 17px;
+  margin-top: 16px;
+  font-size: 18px;
   max-width: 36em;
 }
 
@@ -808,7 +809,7 @@ a.cell:hover {
 }
 
 .gram {
-  padding: 18px 0 6px;
+  padding: 20px 0 8px;
   border-top: 1px solid var(--rule);
 }
 
@@ -818,17 +819,17 @@ a.cell:hover {
 
 .table-wrap {
   overflow-x: auto;
-  margin: 4px 0 14px;
+  margin: 4px 0 16px;
 }
 
 .gram table {
   border-collapse: collapse;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .gram td,
 .gram th {
-  padding: 6px 12px;
+  padding: 8px 12px;
   text-align: left;
   white-space: nowrap;
   background: var(--card);
@@ -866,7 +867,7 @@ a.cell:hover {
 }
 
 .wl-de {
-  font-size: 19px;
+  font-size: 18px;
 }
 
 .wl-pl {
@@ -877,8 +878,13 @@ a.cell:hover {
 
 .wl-ok {
   margin-left: 8px;
-  font-size: 14px;
   color: var(--ok);
+}
+
+.wl-ok .ico {
+  width: 16px;
+  height: 16px;
+  vertical-align: -2px;
 }
 
 .wl-ua {
@@ -907,13 +913,13 @@ a.cell:hover {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 4px 18px;
-  margin: 4px 0 14px;
+  gap: 4px 16px;
+  margin: 4px 0 16px;
 }
 
 .dialog {
   list-style: none;
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   padding: 0;
 }
 
@@ -943,7 +949,7 @@ a.cell:hover {
   display: block;
   width: 100%;
   min-height: 44px;
-  padding: 8px 4px 8px 14px;
+  padding: 8px 4px 8px 16px;
   font: inherit;
   font-size: 18px;
   line-height: 1.4;
@@ -961,7 +967,7 @@ a.cell:hover {
 
 .dialog .ua {
   display: none;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--ink-2);
   animation: reveal 0.2s ease-out;
 }
@@ -975,7 +981,7 @@ a.cell:hover {
 .fact {
   max-width: 34em;
   margin-top: 40px;
-  padding: 16px 18px 18px;
+  padding: 16px 20px 20px;
   background: linear-gradient(var(--marker-soft), var(--marker-soft)), var(--card);
   border-radius: 2px;
   box-shadow: var(--shadow-card);
@@ -983,8 +989,8 @@ a.cell:hover {
 }
 
 .fact h2 {
-  font-size: 17px;
-  margin-bottom: 6px;
+  font-size: 16px;
+  margin-bottom: 8px;
 }
 
 .fact p {
@@ -1004,7 +1010,7 @@ a.cell:hover {
     linear-gradient(var(--card-top), var(--card-top)),
     repeating-linear-gradient(to bottom, transparent 0 31px, var(--card-line) 31px 32px);
   background-size: 100% 2px, 100% 100%;
-  background-position: 0 46px, 0 48px;
+  background-position: 0 48px, 0 50px;
   background-repeat: no-repeat;
   border-radius: 6px;
   box-shadow: var(--shadow-card);
@@ -1020,8 +1026,8 @@ a.cell:hover {
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  height: 46px;
-  font-size: 13px;
+  height: 48px;
+  font-size: 12px;
   color: var(--ink-3);
   text-align: left;
 }
@@ -1061,8 +1067,8 @@ a.cell:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 26px;
-  padding-top: 18px;
+  margin-top: 24px;
+  padding-top: 16px;
   border-top: 1.5px dashed var(--rule);
   animation: reveal 0.22s ease-out;
 }
@@ -1078,7 +1084,7 @@ a.cell:hover {
 .kk-pl,
 .kk-forms,
 .kk-note {
-  margin: 6px 0 0;
+  margin: 4px 0 0;
   color: var(--ink-2);
 }
 
@@ -1098,7 +1104,7 @@ a.cell:hover {
 }
 
 .kk-actions {
-  margin-top: 18px;
+  margin-top: 20px;
 }
 
 .grades {
@@ -1112,8 +1118,8 @@ a.cell:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 58px;
-  padding: 6px 4px;
+  min-height: 56px;
+  padding: 8px 4px;
   font: inherit;
   font-weight: 600;
   color: var(--ink);
@@ -1150,8 +1156,8 @@ a.cell:hover {
 
 .kbd-hint {
   display: none;
-  margin-top: 14px;
-  font-size: 13px;
+  margin-top: 16px;
+  font-size: 12px;
   color: var(--ink-3);
   text-align: center;
 }
@@ -1173,16 +1179,16 @@ a.cell:hover {
 
 /* Вправа лежить на картці, як і слова: червона лінія зверху */
 .ex {
-  padding: 4px 18px 20px;
+  padding: 4px 20px 20px;
   background: var(--card);
   border-radius: 6px;
   box-shadow: var(--shadow-card);
 }
 
 .ex-task {
-  margin: 0 -18px 18px;
-  padding: 12px 18px 10px;
-  font-size: 15px;
+  margin: 0 -20px 20px;
+  padding: 12px 20px;
+  font-size: 14px;
   color: var(--ink-2);
   border-bottom: 2px solid var(--card-top);
 }
@@ -1197,7 +1203,7 @@ a.cell:hover {
 .match {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 8px;
 }
 
 .match-col {
@@ -1208,9 +1214,9 @@ a.cell:hover {
 
 .match-item {
   min-height: 56px;
-  padding: 8px 10px;
+  padding: 8px 12px;
   font: inherit;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.25;
   color: var(--ink);
   background: var(--paper);
@@ -1249,7 +1255,7 @@ a.cell:hover {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .listen-play {
@@ -1287,7 +1293,7 @@ a.cell:hover {
 }
 
 .note-num {
-  margin-top: 10px;
+  margin-top: 8px;
   font-family: var(--font-cond);
   font-stretch: condensed;
   font-size: 60px;
@@ -1296,7 +1302,7 @@ a.cell:hover {
 }
 
 .note-stamp [lang="de"] {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   font-size: 14px;
   font-weight: 600;
 }
@@ -1313,7 +1319,7 @@ a.cell:hover {
 }
 
 .ex-prompt {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 500;
   line-height: 1.35;
 }
@@ -1342,7 +1348,7 @@ a.cell:hover {
 .text-input {
   width: 100%;
   min-height: 52px;
-  padding: 10px 14px;
+  padding: 8px 16px;
   font: inherit;
   font-size: 20px;
   color: var(--ink);
@@ -1369,8 +1375,8 @@ a.cell:hover {
 
 .umlauts {
   display: flex;
-  gap: 6px;
-  margin: 10px 0 16px;
+  gap: 8px;
+  margin: 12px 0 16px;
 }
 
 .umlauts button {
@@ -1387,8 +1393,8 @@ a.cell:hover {
 
 .options {
   display: grid;
-  gap: 10px;
-  margin: 18px 0;
+  gap: 8px;
+  margin: 16px 0;
 }
 
 .options-row {
@@ -1399,7 +1405,7 @@ a.cell:hover {
   min-height: 56px;
   padding: 12px 16px;
   font: inherit;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 500;
   text-align: left;
   color: var(--ink);
@@ -1441,8 +1447,8 @@ a.cell:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  min-height: 62px;
-  margin: 14px 0 18px;
+  min-height: 64px;
+  margin: 16px 0 20px;
   padding: 8px 0;
   border-bottom: 2.5px solid var(--ink);
 }
@@ -1455,9 +1461,9 @@ a.cell:hover {
 
 .chip {
   min-height: 44px;
-  padding: 8px 14px;
+  padding: 8px 12px;
   font: inherit;
-  font-size: 19px;
+  font-size: 18px;
   color: var(--ink);
   background: var(--card);
   border: 1.5px solid var(--rule);
@@ -1471,8 +1477,8 @@ a.cell:hover {
 }
 
 .fb {
-  margin-top: 22px;
-  padding: 16px 18px;
+  margin-top: 24px;
+  padding: 16px 20px;
   background: var(--card);
   border-left: 4px solid;
   border-radius: 0 8px 8px 0;
@@ -1489,8 +1495,8 @@ a.cell:hover {
 
 .fb-title {
   font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 6px;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .fb.ok .fb-title {
@@ -1506,7 +1512,7 @@ a.cell:hover {
   align-items: center;
   flex-wrap: wrap;
   gap: 4px 8px;
-  font-size: 19px;
+  font-size: 18px;
 }
 
 .fb-answer .say {
@@ -1525,7 +1531,7 @@ a.cell:hover {
 
 .result-score {
   margin-bottom: 4px;
-  font-size: 22px;
+  font-size: 24px;
   color: var(--ink-2);
 }
 
@@ -1541,12 +1547,12 @@ a.cell:hover {
 /* ---------- Стрес-тест ---------- */
 
 .stress-intro .lead {
-  font-size: 19px;
+  font-size: 18px;
   max-width: 30em;
 }
 
 .rules {
-  margin: 0 0 22px;
+  margin: 0 0 24px;
   padding-left: 20px;
   color: var(--ink-2);
 }
@@ -1558,7 +1564,7 @@ a.cell:hover {
 .seg {
   display: inline-grid;
   grid-auto-flow: column;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   border: 1.5px solid var(--ink);
   border-radius: 10px;
   overflow: hidden;
@@ -1568,7 +1574,7 @@ a.cell:hover {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-height: 46px;
+  min-height: 44px;
   padding: 8px 16px;
   font: inherit;
   color: var(--ink);
@@ -1598,7 +1604,7 @@ a.cell:hover {
 }
 
 .record {
-  margin-top: 18px;
+  margin-top: 16px;
   color: var(--ink-2);
 }
 
@@ -1628,13 +1634,13 @@ a.cell:hover {
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--ink-2);
 }
 
 .run-top .score {
   font-family: var(--font-cond);
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--ink);
   font-variant-numeric: tabular-nums;
@@ -1657,7 +1663,7 @@ a.cell:hover {
 
 .timer {
   height: 16px;
-  margin-top: 10px;
+  margin-top: 12px;
   border: 1.5px solid var(--ink);
   border-radius: 3px;
   overflow: hidden;
@@ -1675,7 +1681,7 @@ a.cell:hover {
 
 /* Великі цифри таймера — як на табло вокзалу */
 .secs {
-  margin: 6px 0 2px;
+  margin: 8px 0 0;
   font-family: var(--font-cond);
   font-size: clamp(96px, 30vw, 156px);
   font-weight: 700;
@@ -1697,7 +1703,7 @@ a.cell:hover {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin: 0 0 6px;
+  margin: 0 0 8px;
   font-size: clamp(30px, 8.5vw, 46px);
   font-weight: 600;
   line-height: 1.15;
@@ -1723,8 +1729,8 @@ a.cell:hover {
 
 .hint-line {
   display: inline-block;
-  padding: 2px 10px;
-  font-size: 22px;
+  padding: 2px 12px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: 0.06em;
   background: var(--marker-soft);
@@ -1734,8 +1740,8 @@ a.cell:hover {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 14px;
-  margin: 18px 0;
+  gap: 16px;
+  margin: 20px 0;
 }
 
 .answer-zone .note {
@@ -1755,8 +1761,8 @@ a.cell:hover {
 }
 
 .mic .ico {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
 }
 
 .mic.is-on {
@@ -1795,14 +1801,14 @@ a.cell:hover {
 
 .run-actions {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .record-new {
   display: inline-block;
   padding: 2px 12px;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--marker-ink);
   background: var(--marker);
   transform: rotate(-2deg);
@@ -1819,7 +1825,7 @@ a.cell:hover {
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 12px;
-  padding: 10px 0;
+  padding: 12px 0;
   border-bottom: 1px solid var(--rule);
 }
 
@@ -1838,14 +1844,14 @@ a.cell:hover {
 /* ---------- Налаштування ---------- */
 
 .set-group {
-  margin-top: 30px;
-  padding-top: 18px;
+  margin-top: 32px;
+  padding-top: 20px;
   border-top: 1px solid var(--rule);
 }
 
 .field {
   display: grid;
-  gap: 6px;
+  gap: 8px;
   margin-bottom: 16px;
   max-width: 420px;
 }
@@ -1855,7 +1861,7 @@ a.cell:hover {
 }
 
 select {
-  min-height: 46px;
+  min-height: 48px;
   padding: 8px 12px;
   font: inherit;
   color: var(--ink);
@@ -1878,8 +1884,8 @@ input[type="range"] {
 }
 
 .check input {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   accent-color: var(--ink);
 }
 
@@ -1894,8 +1900,8 @@ input[type="range"] {
   bottom: calc(var(--tabbar-h) + 20px + env(safe-area-inset-bottom));
   z-index: 50;
   max-width: calc(100% - 32px);
-  padding: 10px 16px;
-  font-size: 15px;
+  padding: 12px 16px;
+  font-size: 14px;
   color: var(--paper);
   background: var(--ink);
   border-radius: 10px;

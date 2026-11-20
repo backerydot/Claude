@@ -107,12 +107,12 @@ export function render(app) {
       out.textContent = 'Немає доступу до мікрофона. Дозволь його в налаштуваннях сайту.';
       return;
     }
-    out.textContent = 'Скажи щось німецькою, наприклад «Guten Tag».';
+    out.textContent = 'Скажи щось німецькою, наприклад «Guten Tag»';
     try {
       const alts = await listen();
       out.textContent = alts.length ? `Почуто: «${alts[0]}». Мікрофон працює.` : 'Нічого не почуто. Спробуй ще раз.';
     } catch (err) {
-      out.textContent = `Розпізнавання не спрацювало (${err.message}).`;
+      out.textContent = `Розпізнавання не спрацювало (${err.message})`;
     }
   });
 

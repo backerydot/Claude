@@ -8,12 +8,8 @@ import { esc, wordHTML, sayBtn, plural, fmtNum } from '../ui.js';
 // Дні тижня німецькою — заодно вчимо (вони будуть в уроці 8)
 const WEEKDAYS = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
 
-function greeting() {
-  const h = new Date().getHours();
-  if (h >= 5 && h < 11) return 'Guten Morgen!';
-  if (h >= 11 && h < 18) return 'Guten Tag!';
-  return 'Guten Abend!';
-}
+// Сьогоднішня дата німецькою: «Freitag, 20. November» — заодно вчимо дні й місяці
+const dateDe = () => new Date().toLocaleDateString('de-DE', { weekday: 'long', day: 'numeric', month: 'long' });
 
 function weekday(day) {
   const [y, m, d] = day.split('-').map(Number);
@@ -22,10 +18,10 @@ function weekday(day) {
 
 function todayText(due, fresh) {
   if (due && fresh) {
-    return `Сьогодні ${due} ${plural(due, 'слово', 'слова', 'слів')} на повторення і ${fresh} ${plural(fresh, 'нове', 'нових', 'нових')}.`;
+    return `Сьогодні ${due} ${plural(due, 'слово', 'слова', 'слів')} на повторення і ${fresh} ${plural(fresh, 'нове', 'нових', 'нових')}`;
   }
-  if (due) return `Сьогодні ${due} ${plural(due, 'слово', 'слова', 'слів')} на повторення.`;
-  if (fresh) return `Сьогодні ${fresh} ${plural(fresh, 'нове слово', 'нових слова', 'нових слів')}.`;
+  if (due) return `Сьогодні ${due} ${plural(due, 'слово', 'слова', 'слів')} на повторення`;
+  if (fresh) return `Сьогодні ${fresh} ${plural(fresh, 'нове слово', 'нових слова', 'нових слів')}`;
   return 'На сьогодні все повторено. Можна пройти стрес-тест або відкрити наступний урок.';
 }
 
@@ -45,7 +41,7 @@ export function render(app, content) {
 
   app.innerHTML = `
     <section class="home-hero">
-      <h1 class="greet" lang="de">${greeting()}</h1>
+      <h1 class="greet" lang="de">${dateDe()}</h1>
       ${hero ? `<div class="hero-word">${wordHTML(hero)}${sayBtn(label(hero))}</div><p class="hero-ua">${esc(hero.ua)}</p>` : ''}
       <p class="today-line">${todayText(due.length, fresh.length)}</p>
       ${todo
@@ -72,7 +68,7 @@ export function render(app, content) {
 
     <section class="block">
       <h2>Стрес-тест</h2>
-      <p>${best ? `Твій рекорд — ${fmtNum(best)} ${plural(best, 'бал', 'бали', 'балів')}.` : 'Відповідаєш уголос на час. Питання лише з того, що вже вивчено.'}</p>
+      <p>${best ? `Твій рекорд — ${fmtNum(best)} ${plural(best, 'бал', 'бали', 'балів')}` : 'Відповідаєш уголос на час. Питання лише з того, що вже вивчено.'}</p>
       <a class="btn" href="#/stress">Почати стрес-тест</a>
     </section>
 

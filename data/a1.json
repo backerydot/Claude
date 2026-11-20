@@ -6,7 +6,7 @@
       "num": 1,
       "title": "Привіт! Знайомство",
       "titleDe": "Hallo! Wer bist du?",
-      "topic": "Вітаємося і прощаємося, називаємо ім’я, кажемо, звідки ми і де живемо.",
+      "topic": "Вітаємося і прощаємося, називаємо ім’я, кажемо, звідки ми і де живемо",
       "scene": {
         "title": "Перший день на курсах",
         "lines": [
@@ -107,7 +107,7 @@
       "num": 2,
       "title": "Професія і числа",
       "titleDe": "Was bist du von Beruf?",
-      "topic": "Розповідаємо про професію, рахуємо до ста, називаємо вік і номер телефону.",
+      "topic": "Розповідаємо про професію, рахуємо до ста, називаємо вік і номер телефону",
       "scene": {
         "title": "Після заняття",
         "lines": [
@@ -210,7 +210,7 @@
       "num": 3,
       "title": "Моя сім’я",
       "titleDe": "Meine Familie",
-      "topic": "Розповідаємо про родину, країни і мови.",
+      "topic": "Розповідаємо про родину, країни і мови",
       "scene": {
         "title": "Моя родина",
         "lines": [
@@ -310,7 +310,7 @@
       "num": 4,
       "title": "Моя квартира",
       "titleDe": "Die Wohnung ist schön!",
-      "topic": "Кімнати і меблі, описуємо речі: великий, світлий, дорогий.",
+      "topic": "Кімнати і меблі, описуємо речі: великий, світлий, дорогий",
       "scene": {
         "title": "Нова квартира",
         "lines": [
@@ -407,7 +407,7 @@
       "num": 5,
       "title": "Речі та кольори",
       "titleDe": "Das ist kein Kuli!",
-      "topic": "Називаємо предмети навколо і їхні кольори.",
+      "topic": "Називаємо предмети навколо і їхні кольори",
       "scene": {
         "title": "Де мій ключ?",
         "lines": [
@@ -505,7 +505,7 @@
       "num": 6,
       "title": "В офісі",
       "titleDe": "Im Büro",
-      "topic": "Робочі справи і предмети. Множина іменників і знахідний відмінок.",
+      "topic": "Робочі справи і предмети. Множина іменників і знахідний відмінок",
       "scene": {
         "title": "Понеділок в офісі",
         "lines": [
@@ -607,23 +607,23 @@
         { "type": "question", "de": "Was machst du heute?", "ua": "Що ти робиш сьогодні?", "accept": ["ich *", "heute *"], "example": "Heute lerne ich Deutsch." }
       ]
     },
-    { "id": "a1-07", "num": 7, "planned": true, "title": "Хобі та вміння", "titleDe": "Was machst du gern?", "topic": "Вільний час, хобі, що я вмію.", "grammarPlan": ["Модальне дієслово können", "Рамкова конструкція: Ich kann gut schwimmen.", "Зміна голосної: fahren, lesen, sehen, treffen"] },
-    { "id": "a1-08", "num": 8, "planned": true, "title": "Час і зустрічі", "titleDe": "Hast du morgen Zeit?", "topic": "Котра година, дні тижня, домовляємося про зустріч.", "grammarPlan": ["Котра година: офіційно і в розмові", "Прийменники часу am, um, von … bis", "Дні тижня і частини дня"] },
-    { "id": "a1-09", "num": 9, "planned": true, "title": "Їжа та напої", "titleDe": "Guten Appetit!", "topic": "Продукти, сніданок, обід і вечеря, покупки.", "grammarPlan": ["Порядок слів: дієслово на другому місці", "ja, nein, doch", "möchten"] },
-    { "id": "a1-10", "num": 10, "planned": true, "title": "Мій день", "titleDe": "Mein Tag", "topic": "Розпорядок дня і транспорт.", "grammarPlan": ["Відокремлювані дієслова: aufstehen, einkaufen, anrufen", "mit + Dativ: mit dem Bus"] },
-    { "id": "a1-11", "num": 11, "planned": true, "title": "Що ти робив?", "titleDe": "Was hast du gemacht?", "topic": "Розповідаємо про минулий день.", "grammarPlan": ["Perfekt з haben", "Partizip II правильних і неправильних дієслів"] },
-    { "id": "a1-12", "num": 12, "planned": true, "title": "Куди ти їздив?", "titleDe": "Wohin bist du gefahren?", "topic": "Поїздки і події в минулому.", "grammarPlan": ["Perfekt з sein", "Partizip II відокремлюваних дієслів"] },
-    { "id": "a1-13", "num": 13, "planned": true, "title": "У місті", "titleDe": "Wo ist der Bahnhof?", "topic": "Орієнтуємося в місті, питаємо дорогу.", "grammarPlan": ["Прийменники з Dativ: Wo? in, an, auf, neben, vor, hinter", "Порядкові числівники: die erste Straße"] },
-    { "id": "a1-14", "num": 14, "planned": true, "title": "Житло", "titleDe": "Wohnen in der Stadt", "topic": "Шукаємо квартиру, читаємо оголошення.", "grammarPlan": ["Присвійні артиклі: sein, ihr, unser, euer", "Скорочення в оголошеннях"] },
-    { "id": "a1-15", "num": 15, "planned": true, "title": "Друзі", "titleDe": "Kennst du ihn?", "topic": "Друзі, знайомі, запрошення.", "grammarPlan": ["Особові займенники в Akkusativ: mich, dich, ihn, sie, es"] },
-    { "id": "a1-16", "num": 16, "planned": true, "title": "Правила", "titleDe": "Was darf man hier?", "topic": "Що можна і що треба: правила вдома, у школі, на роботі.", "grammarPlan": ["Модальні дієслова müssen і dürfen"] },
-    { "id": "a1-17", "num": 17, "planned": true, "title": "Свята і подарунки", "titleDe": "Alles Gute!", "topic": "Дні народження, свята, дата.", "grammarPlan": ["Dativ: mir, dir, ihm, ihr", "Дата: am ersten Mai"] },
-    { "id": "a1-18", "num": 18, "planned": true, "title": "Погода", "titleDe": "Wie war das Wetter?", "topic": "Погода, пори року, місяці.", "grammarPlan": ["Präteritum: war, hatte", "Місяці та пори року"] },
-    { "id": "a1-19", "num": 19, "planned": true, "title": "Здоров’я", "titleDe": "Mir geht's nicht gut", "topic": "Тіло, хвороба, у лікаря.", "grammarPlan": ["Модальне дієслово sollen", "Імператив: Sie-форма"] },
-    { "id": "a1-20", "num": 20, "planned": true, "title": "Одяг", "titleDe": "Welche Jacke gefällt dir?", "topic": "Одяг, купуємо речі.", "grammarPlan": ["welch- і dies-", "Дієслова з Dativ: gefallen, passen, stehen"] },
-    { "id": "a1-21", "num": 21, "planned": true, "title": "Подорожі", "titleDe": "Wir wollen reisen", "topic": "Плануємо поїздку, вокзал, готель.", "grammarPlan": ["Модальне дієслово wollen", "Куди? nach, in, an"] },
-    { "id": "a1-22", "num": 22, "planned": true, "title": "Прохання", "titleDe": "Können Sie mir helfen?", "topic": "Ввічливо просимо про допомогу.", "grammarPlan": ["Ввічливі прохання: Könnten Sie …?", "Імператив: du і ihr"] },
-    { "id": "a1-23", "num": 23, "planned": true, "title": "Що краще?", "titleDe": "Lieber Tee oder Kaffee?", "topic": "Порівнюємо і кажемо, що подобається більше.", "grammarPlan": ["gern, lieber, am liebsten", "gut, besser, am besten"] },
-    { "id": "a1-24", "num": 24, "planned": true, "title": "Повторення A1", "titleDe": "Fit für A1", "topic": "Повторюємо все і готуємося до іспиту Goethe-Zertifikat A1.", "grammarPlan": ["Повторення граматики A1", "Формат іспиту Start Deutsch 1"] }
+    { "id": "a1-07", "num": 7, "planned": true, "title": "Хобі та вміння", "titleDe": "Was machst du gern?", "topic": "Вільний час, хобі, що я вмію", "grammarPlan": ["Модальне дієслово können", "Рамкова конструкція: Ich kann gut schwimmen.", "Зміна голосної: fahren, lesen, sehen, treffen"] },
+    { "id": "a1-08", "num": 8, "planned": true, "title": "Час і зустрічі", "titleDe": "Hast du morgen Zeit?", "topic": "Котра година, дні тижня, домовляємося про зустріч", "grammarPlan": ["Котра година: офіційно і в розмові", "Прийменники часу am, um, von … bis", "Дні тижня і частини дня"] },
+    { "id": "a1-09", "num": 9, "planned": true, "title": "Їжа та напої", "titleDe": "Guten Appetit!", "topic": "Продукти, сніданок, обід і вечеря, покупки", "grammarPlan": ["Порядок слів: дієслово на другому місці", "ja, nein, doch", "möchten"] },
+    { "id": "a1-10", "num": 10, "planned": true, "title": "Мій день", "titleDe": "Mein Tag", "topic": "Розпорядок дня і транспорт", "grammarPlan": ["Відокремлювані дієслова: aufstehen, einkaufen, anrufen", "mit + Dativ: mit dem Bus"] },
+    { "id": "a1-11", "num": 11, "planned": true, "title": "Що ти робив?", "titleDe": "Was hast du gemacht?", "topic": "Розповідаємо про минулий день", "grammarPlan": ["Perfekt з haben", "Partizip II правильних і неправильних дієслів"] },
+    { "id": "a1-12", "num": 12, "planned": true, "title": "Куди ти їздив?", "titleDe": "Wohin bist du gefahren?", "topic": "Поїздки і події в минулому", "grammarPlan": ["Perfekt з sein", "Partizip II відокремлюваних дієслів"] },
+    { "id": "a1-13", "num": 13, "planned": true, "title": "У місті", "titleDe": "Wo ist der Bahnhof?", "topic": "Орієнтуємося в місті, питаємо дорогу", "grammarPlan": ["Прийменники з Dativ: Wo? in, an, auf, neben, vor, hinter", "Порядкові числівники: die erste Straße"] },
+    { "id": "a1-14", "num": 14, "planned": true, "title": "Житло", "titleDe": "Wohnen in der Stadt", "topic": "Шукаємо квартиру, читаємо оголошення", "grammarPlan": ["Присвійні артиклі: sein, ihr, unser, euer", "Скорочення в оголошеннях"] },
+    { "id": "a1-15", "num": 15, "planned": true, "title": "Друзі", "titleDe": "Kennst du ihn?", "topic": "Друзі, знайомі, запрошення", "grammarPlan": ["Особові займенники в Akkusativ: mich, dich, ihn, sie, es"] },
+    { "id": "a1-16", "num": 16, "planned": true, "title": "Правила", "titleDe": "Was darf man hier?", "topic": "Що можна і що треба: правила вдома, у школі, на роботі", "grammarPlan": ["Модальні дієслова müssen і dürfen"] },
+    { "id": "a1-17", "num": 17, "planned": true, "title": "Свята і подарунки", "titleDe": "Alles Gute!", "topic": "Дні народження, свята, дата", "grammarPlan": ["Dativ: mir, dir, ihm, ihr", "Дата: am ersten Mai"] },
+    { "id": "a1-18", "num": 18, "planned": true, "title": "Погода", "titleDe": "Wie war das Wetter?", "topic": "Погода, пори року, місяці", "grammarPlan": ["Präteritum: war, hatte", "Місяці та пори року"] },
+    { "id": "a1-19", "num": 19, "planned": true, "title": "Здоров’я", "titleDe": "Mir geht's nicht gut", "topic": "Тіло, хвороба, у лікаря", "grammarPlan": ["Модальне дієслово sollen", "Імператив: Sie-форма"] },
+    { "id": "a1-20", "num": 20, "planned": true, "title": "Одяг", "titleDe": "Welche Jacke gefällt dir?", "topic": "Одяг, купуємо речі", "grammarPlan": ["welch- і dies-", "Дієслова з Dativ: gefallen, passen, stehen"] },
+    { "id": "a1-21", "num": 21, "planned": true, "title": "Подорожі", "titleDe": "Wir wollen reisen", "topic": "Плануємо поїздку, вокзал, готель", "grammarPlan": ["Модальне дієслово wollen", "Куди? nach, in, an"] },
+    { "id": "a1-22", "num": 22, "planned": true, "title": "Прохання", "titleDe": "Können Sie mir helfen?", "topic": "Ввічливо просимо про допомогу", "grammarPlan": ["Ввічливі прохання: Könnten Sie …?", "Імператив: du і ihr"] },
+    { "id": "a1-23", "num": 23, "planned": true, "title": "Що краще?", "titleDe": "Lieber Tee oder Kaffee?", "topic": "Порівнюємо і кажемо, що подобається більше", "grammarPlan": ["gern, lieber, am liebsten", "gut, besser, am besten"] },
+    { "id": "a1-24", "num": 24, "planned": true, "title": "Повторення A1", "titleDe": "Fit für A1", "topic": "Повторюємо все і готуємося до іспиту Goethe-Zertifikat A1", "grammarPlan": ["Повторення граматики A1", "Формат іспиту Start Deutsch 1"] }
   ]
 }

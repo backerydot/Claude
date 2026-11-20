@@ -139,7 +139,7 @@ export function render(app, content, lessonId) {
           x.disabled = true;
         }
         if (++found === ex.words.length) {
-          feedback(ex, misses <= 1, { title: misses ? `Усі пари знайдено. Помилок: ${misses}.` : 'Усі пари без жодної помилки!' });
+          feedback(ex, misses <= 1, { title: misses ? `Усі пари знайдено, помилок: ${misses}` : 'Усі пари без жодної помилки' });
         }
       } else {
         misses++;
@@ -278,7 +278,7 @@ export function render(app, content, lessonId) {
     else if (ex.type !== 'match') wrong.push(ex);
     const full = ex.type === 'match' ? '' : fullText(ex);
     app.querySelectorAll('[data-act="check"], [data-act="reset"], .ex-form [type="submit"], .umlauts').forEach((el) => { el.hidden = true; });
-    title = title || (ok ? 'Правильно!' : close ? 'Майже! Перевір написання.' : 'Неправильно.');
+    title = title || (ok ? 'Правильно' : close ? 'Майже, перевір написання' : 'Неправильно');
     app.querySelector('.fb-slot').innerHTML = `
       <div class="fb ${ok ? 'ok' : 'bad'}" role="status">
         <p class="fb-title">${title}</p>
@@ -308,8 +308,8 @@ export function render(app, content, lessonId) {
     dayStats().exercises++;
     markActive();
     save();
-    const title = pct >= 90 ? 'Чудово!' : pct >= 70 ? 'Добре!' : 'Варто повторити';
-    const record = prevBest && pct > prevBest ? ` Це новий найкращий результат (був ${prevBest}%).` : '';
+    const title = pct >= 90 ? 'Чудово' : pct >= 70 ? 'Добре' : 'Варто повторити';
+    const record = prevBest && pct > prevBest ? `, найкращий досі (був ${prevBest}%)` : '';
     const [, note, noteDe] = NOTEN.find(([min]) => pct >= min);
     const prompt = (ex) => ex.ua || (ex.q ? ex.q : 'Диктант');
     app.innerHTML = `
@@ -319,8 +319,9 @@ export function render(app, content, lessonId) {
           <p class="note-stamp" aria-label="Оцінка ${note}, ${noteDe}"><span class="note-num">${note}</span><span lang="de">${noteDe}</span></p>
         </div>
         <h1>${title}</h1>
-        <p>Результат: ${pct}%.${record}${pct < 70 ? ' Перечитай граматику уроку й спробуй ще раз.' : ''}</p>
-        <p class="muted">Оцінка — як у німецькій школі: 1 найкраща, 6 найгірша.</p>
+        <p>Результат ${pct}%${record}</p>
+        ${pct < 70 ? '<p>Перечитай граматику уроку й спробуй ще раз</p>' : ''}
+        <p class="muted">Оцінка — як у німецькій школі: 1 найкраща, 6 найгірша</p>
         ${wrong.length ? `
           <h2>Над чим попрацювати</h2>
           <ul class="mistakes">${wrong.map((ex) => `

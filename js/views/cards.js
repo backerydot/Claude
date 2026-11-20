@@ -123,7 +123,7 @@ export function render(app, content, lessonId) {
           ? `<div class="grades">${GRADES.map((g) => `<button class="grade grade-${g.id}" data-grade="${g.id}">${g.label}<small>${formatInterval(iv[g.id])}</small></button>`).join('')}</div>`
           : '<button class="btn btn-marker btn-wide" data-act="flip">Показати відповідь</button>'}
       </div>
-      <p class="kbd-hint">На клавіатурі: пробіл показує відповідь, клавіші 1–4 ставлять оцінку.</p>`;
+      <p class="kbd-hint">На клавіатурі: пробіл показує відповідь, клавіші 1–4 ставлять оцінку</p>`;
 
     app.querySelector('[data-act="flip"]')?.addEventListener('click', flip);
     app.querySelector('.kk').addEventListener('click', (e) => {
@@ -135,8 +135,8 @@ export function render(app, content, lessonId) {
   function finish() {
     app.innerHTML = `
       <section class="done">
-        <h1>Готово!</h1>
-        <p>Повторено ${done} ${plural(done, 'картку', 'картки', 'карток')}${newSeen.size ? `, з них нових ${newSeen.size}` : ''}.</p>
+        <h1>Готово</h1>
+        <p>Повторено ${done} ${plural(done, 'картку', 'картки', 'карток')}${newSeen.size ? `, з них нових ${newSeen.size}` : ''}</p>
         <div class="row-actions">
           <a class="btn btn-marker" href="#/stress">Перевірити себе в стрес-тесті</a>
           <a class="btn" href="${back}">${lesson ? 'Повернутися до уроку' : 'На головну'}</a>

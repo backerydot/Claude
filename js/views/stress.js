@@ -77,10 +77,10 @@ export function render(app, content) {
         <h1>Стрес-тест</h1>
         <p class="lead">${S.stressCount} питань на швидкість. На кожне слово є ${S.stressSeconds} секунд, на речення ${S.stressSeconds + 5}.</p>
         <ul class="rules">
-          <li>Відповідай уголос німецькою. Можна й з клавіатури.</li>
-          <li>Підказка відкриває перші літери, але забирає половину балів.</li>
-          <li>Швидка відповідь і серія правильних дають бонус.</li>
-          <li>Питання беруться тільки з вивчених слів і фраз.</li>
+          <li>Відповідай уголос німецькою або з клавіатури</li>
+          <li>Підказка відкриває перші літери, але забирає половину балів</li>
+          <li>Швидка відповідь і серія правильних дають бонус</li>
+          <li>Питання беруться тільки з вивчених слів і фраз</li>
         </ul>
         <div class="seg" role="radiogroup" aria-label="Як відповідати">
           <button type="button" role="radio" aria-checked="${mode === 'voice'}" data-mode="voice"${voiceOk ? '' : ' disabled'}>${icon('mic')}Голосом</button>
@@ -90,7 +90,7 @@ export function render(app, content) {
         ${notice ? `<p class="note">${esc(notice)}</p>` : ''}
         ${enough
           ? '<button class="btn btn-marker btn-big" data-act="start">Почати</button>'
-          : `<p class="note">Поки вивчено ${learned} ${plural(learned, 'слово', 'слова', 'слів')}, а для тесту треба хоча б ${MIN_WORDS}.</p>
+          : `<p class="note">Поки вивчено ${learned} ${plural(learned, 'слово', 'слова', 'слів')}, а для тесту треба хоча б ${MIN_WORDS}</p>
              <div class="row-actions">
                <a class="btn btn-marker" href="#/cards">Вчити слова</a>
                <button class="btn" data-act="demo">Пробний раунд</button>
@@ -325,7 +325,7 @@ export function render(app, content) {
     if (q.kind === 'sentence') return { text: letterHint(q.s.answers[0]), costs: true };
     if (q.kind === 'question') return { text: letterHint(q.s.example), costs: true };
     const part = compoundPart(q.w);
-    if (part) return { text: `Складне слово: рід такий самий, як у «${part.de}».`, costs: true };
+    if (part) return { text: `Складне слово: рід такий самий, як у «${part.de}»`, costs: true };
     const rule = articleRule(q.w.de);
     if (rule) return { text: rule, costs: true };
     return { text: 'Простого правила тут немає, тому ця підказка безкоштовна. Повтори слово з артиклем на картках.', costs: false };
@@ -366,7 +366,7 @@ export function render(app, content) {
     app.querySelector('.answer-zone').hidden = true;
     app.querySelector('.score').innerHTML = `${fmtNum(run.score)} <small>${plural(run.score, 'бал', 'бали', 'балів')}</small>`;
 
-    const title = ok ? `Правильно! +${pts}` : info.timeout ? 'Час вийшов' : info.skipped ? 'Пропущено' : 'Не так';
+    const title = ok ? `Правильно, +${pts}` : info.timeout ? 'Час вийшов' : info.skipped ? 'Пропущено' : 'Не так';
     const heardLabel = info.via === 'voice' ? 'Почуто' : 'Твоя відповідь';
     const canOverride = !ok && info.via === 'voice' && info.heard;
     app.querySelector('.fb-slot').innerHTML = `
@@ -374,7 +374,7 @@ export function render(app, content) {
         <p class="fb-title">${title}</p>
         ${info.heard ? `<p class="fb-heard">${heardLabel}: «${esc(info.heard)}»</p>` : ''}
         <p class="fb-answer">${ok ? '' : '<span>Правильно:</span>'}<b lang="de">${esc(answer)}</b>${sayBtn(answer)}</p>
-        ${canOverride ? '<p class="fb-note">Якщо відповідь була правильна, а розпізнало не так, натисни «Зарахувати».</p>' : ''}
+        ${canOverride ? '<p class="fb-note">Якщо відповідь була правильна, а розпізнало не так, натисни «Зарахувати»</p>' : ''}
         <div class="row-actions">
           <button class="btn btn-marker" type="button" data-act="next">${run.i + 1 < run.qs.length ? 'Далі' : 'Результат'}</button>
           ${canOverride ? '<button class="btn btn-ghost" type="button" data-act="override">Зарахувати</button>' : ''}
@@ -437,21 +437,21 @@ export function render(app, content) {
     }
 
     const recordLine = run.demo
-      ? '<p class="note">Пробний раунд не записується в рекорди.</p>'
+      ? '<p class="note">Пробний раунд не записується в рекорди</p>'
       : isRecord
-        ? '<p class="record-new">Новий рекорд!</p>'
+        ? '<p class="record-new">Новий рекорд</p>'
         : `<p class="muted">Рекорд: ${fmtNum(state.stress.best)}</p>`;
 
     app.innerHTML = `
       <section class="stress-result">
         <p class="result-score"><span class="num">${fmtNum(run.score)}</span> ${plural(run.score, 'бал', 'бали', 'балів')}</p>
         ${recordLine}
-        <p>Правильно ${right} з ${n}${times.length ? `, у середньому за ${avg.toFixed(1).replace('.', ',')} с` : ''}.</p>
+        <p>Правильно ${right} з ${n}${times.length ? `, у середньому за ${avg.toFixed(1).replace('.', ',')} с` : ''}</p>
         ${mistakes.length
           ? `<h2>Помилки</h2>
              <ul class="mistakes">${mistakes.map(mistakeRow).join('')}</ul>
-             ${run.demo ? '' : '<p class="muted">Слова з помилками додано в сьогоднішнє повторення.</p>'}`
-          : '<p>Жодної помилки!</p>'}
+             ${run.demo ? '' : '<p class="muted">Слова з помилками додано в сьогоднішнє повторення</p>'}`
+          : '<p>Жодної помилки</p>'}
         <div class="row-actions">
           <button class="btn btn-marker" data-act="again">Ще раз</button>
           <a class="btn" href="#/cards">До карток</a>

@@ -28,6 +28,9 @@ const ICONS = {
   mic: svg('<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21"/>'),
   keyboard: svg('<rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6.5 10h.01M10 10h.01M14 10h.01M17.5 10h.01M7.5 14h9"/>'),
   back: svg('<path d="m14.5 5.5-6.5 6.5 6.5 6.5"/>'),
+  next: svg('<path d="m9.5 5.5 6.5 6.5-6.5 6.5"/>'),
+  check: svg('<path d="m5 12.5 4.5 4.5L19 7.5"/>'),
+  flag: svg('<path d="M5.5 21V4"/><path d="M5.5 4.5c4-2 7 2 13 0v9c-6 2-9-2-13 0"/>'),
   game: svg('<rect x="5" y="4" width="14" height="12" rx="3"/><path d="M5 10h14"/><path d="M9 13h.01M15 13h.01"/><path d="m8 20 2-4M16 20l-2-4"/>'),
   flame: svg('<path d="M12 3c.6 3 4.5 4.8 4.5 9.5a4.5 4.5 0 0 1-9 0c0-2.2 1.1-3.6 2.3-4.6.1 1.9.9 3 2.1 3.1-.4-3.1-.8-5.6.1-8z"/>'),
 };

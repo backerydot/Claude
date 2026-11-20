@@ -38,7 +38,7 @@ body.game {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 12px;
+  padding: 8px 12px;
   font-weight: 600;
   color: var(--ink);
   text-decoration: none;
@@ -65,13 +65,21 @@ body.game {
 .hud-chip {
   display: inline-flex;
   align-items: center;
-  padding: 4px 10px;
+  gap: 4px;
+  padding: 4px 12px;
+  white-space: nowrap;
   font-weight: 600;
   color: var(--ink);
   text-decoration: none;
   background: var(--card);
   border: 1.5px solid var(--rule);
   border-radius: 999px;
+}
+
+.hud-chip .ico {
+  width: 18px;
+  height: 18px;
+  color: var(--ink-2);
 }
 
 .hud-due {
@@ -92,7 +100,7 @@ body.game {
   transform: translateX(-50%);
   width: min(560px, calc(100vw - 32px));
   box-sizing: border-box;
-  padding: 14px 16px 16px;
+  padding: 16px;
   background: var(--card);
   border-top: 4px solid var(--card-top);
   border-radius: 6px 6px 12px 12px;
@@ -100,7 +108,7 @@ body.game {
 }
 
 .station-card p {
-  margin: 10px 0 0;
+  margin: 12px 0 0;
 }
 
 .st-head {
@@ -129,20 +137,25 @@ body.game {
 
 .st-title span {
   color: var(--ink-2);
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .st-nav {
+  display: grid;
+  place-items: center;
   width: 44px;
   height: 44px;
-  font: inherit;
-  font-size: 28px;
-  line-height: 1;
+  padding: 0;
   color: var(--ink);
   background: var(--paper);
   border: 1.5px solid var(--ink);
   border-radius: 50%;
   cursor: pointer;
+}
+
+.st-nav .ico {
+  width: 20px;
+  height: 20px;
 }
 
 .st-nav:disabled {
@@ -153,8 +166,8 @@ body.game {
 .st-progress {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 8px;
+  margin-top: 12px;
   font-size: 14px;
   color: var(--ink-2);
 }
@@ -173,7 +186,7 @@ body.game {
 }
 
 .st-actions .btn {
-  padding: 10px 8px;
+  padding: 8px;
 }
 
 .hint {
@@ -210,7 +223,10 @@ body.game {
   position: sticky;
   top: 0;
   z-index: 2;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: fit-content;
   margin: 0 0 0 auto;
   padding: 12px 16px;
   font: inherit;
@@ -220,6 +236,11 @@ body.game {
   border: 0;
   border-bottom-left-radius: 10px;
   cursor: pointer;
+}
+
+.overlay-close .ico {
+  width: 20px;
+  height: 20px;
 }
 
 @media (max-width: 600px) {

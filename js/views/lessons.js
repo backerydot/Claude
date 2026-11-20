@@ -12,7 +12,7 @@ export function renderList(app, content) {
     .map((level) => `
       <header class="page-head">
         <h1>Уроки ${esc(level.id)}</h1>
-        <p class="muted">Теми й граматика йдуть приблизно в тому ж порядку, що й у підручнику Menschen ${esc(level.id)}.</p>
+        <p class="muted">Теми й граматика йдуть приблизно в тому ж порядку, що й у підручнику Menschen ${esc(level.id)}</p>
       </header>
       <ol class="lesson-list">${level.lessons.map((l) => lessonRow(l, state)).join('')}</ol>`)
     .join('');
@@ -60,7 +60,7 @@ export function renderLesson(app, content, id) {
     </div>`;
   app.innerHTML = `${head}
     ${actions}
-    <p class="muted">Вивчено ${s.learned} з ${s.total} слів.</p>
+    <p class="muted">Вивчено ${s.learned} з ${s.total} слів</p>
     ${lesson.scene ? sceneHTML(lesson.scene) : ''}
 
     <section class="block">
@@ -105,7 +105,7 @@ function sceneHTML(scene) {
           <button class="line" type="button"><span lang="de">${esc(l.de)}</span><span class="ua">${esc(l.ua)}</span></button>
         </li>`).join('')}
       </ol>
-      <p class="muted">Натисни на репліку, щоб почути її й побачити переклад.</p>
+      <p class="muted">Натисни на репліку, щоб почути її й побачити переклад</p>
     </section>`;
 }
 
@@ -175,7 +175,7 @@ function wordRow(w, state) {
   const learned = isLearned(state.cards[w.id]);
   return `
     <li${learned ? ' class="is-learned"' : ''}>
-      <div class="wl-de">${wordHTML(w)}${pl ? `<span class="wl-pl">${esc(pl)}</span>` : ''}${learned ? '<span class="wl-ok" title="Вивчено">✓</span>' : ''}</div>
+      <div class="wl-de">${wordHTML(w)}${pl ? `<span class="wl-pl">${esc(pl)}</span>` : ''}${learned ? `<span class="wl-ok" title="Вивчено" aria-label="Вивчено">${icon('check')}</span>` : ''}</div>
       <div class="wl-ua">${esc(w.ua)}</div>
       ${extra ? `<div class="wl-extra" lang="de">${extra}</div>` : ''}
       ${sayBtn(label(w))}

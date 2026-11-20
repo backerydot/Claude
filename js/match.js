@@ -151,11 +151,11 @@ export function letterHint(text) {
 
 // Правила, за якими часто можна вгадати рід
 const RULES = [
-  { re: /(ung|heit|keit|schaft|ion|tät|ik)$/, text: 'Слова на -ung, -heit, -keit, -schaft, -ion, -tät, -ik майже завжди die.' },
-  { re: /(chen|lein)$/, text: 'Зменшувальні слова на -chen і -lein завжди das.' },
-  { re: /(ment|um)$/, text: 'Слова на -ment і -um здебільшого das.' },
-  { re: /(ismus|ling|ent|ant|or)$/, text: 'Слова на -ismus, -ling, -ent, -ant, -or здебільшого der.' },
-  { re: /e$/, text: 'Слова на -e здебільшого die (але der Name, der Kollege).' },
+  { re: /(ung|heit|keit|schaft|ion|tät|ik)$/, text: 'Слова на -ung, -heit, -keit, -schaft, -ion, -tät, -ik майже завжди die' },
+  { re: /(chen|lein)$/, text: 'Зменшувальні слова на -chen і -lein завжди das' },
+  { re: /(ment|um)$/, text: 'Слова на -ment і -um здебільшого das' },
+  { re: /(ismus|ling|ent|ant|or)$/, text: 'Слова на -ismus, -ling, -ent, -ant, -or здебільшого der' },
+  { re: /e$/, text: 'Слова на -e здебільшого die (але der Name, der Kollege)' },
 ];
 
 export function articleRule(noun) {
