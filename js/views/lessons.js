@@ -53,6 +53,8 @@ export function renderLesson(app, content, id) {
   }
 
   const s = lessonStats(lesson, state);
+  // Урок-фокус має список слів з минулих уроків, які в ньому повторюємо
+  const review = (lesson.review || []).map((rid) => content.wordById.get(rid)).filter(Boolean);
   const actions = `
     <div class="row-actions">
       <a class="btn btn-marker" href="#/cards/${lesson.id}">Вчити слова</a>
@@ -74,6 +76,9 @@ export function renderLesson(app, content, id) {
       <h2>Слова</h2>
       <p class="legend"><span><b class="g-der">der</b> чоловічий</span><span><b class="g-das">das</b> середній</span><span><b class="g-die">die</b> жіночий</span></p>
       <ul class="word-list">${lesson.words.map((w) => wordRow(w, state)).join('')}</ul>
+      ${review.length ? `
+        <h3>Повторюємо з минулих уроків</h3>
+        <ul class="word-list">${review.map((w) => wordRow(w, state)).join('')}</ul>` : ''}
     </section>
 
     <section class="block">

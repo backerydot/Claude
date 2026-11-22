@@ -1041,6 +1041,13 @@ a.cell:hover {
   border-radius: 3px;
 }
 
+/* Слово з минулого уроку — обведене, а не замальоване маркером */
+.kk-tag-review {
+  color: var(--ink-2);
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--rule);
+}
+
 .kk-front {
   display: flex;
   align-items: center;

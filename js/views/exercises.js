@@ -12,24 +12,41 @@ const LISTEN = 2;        // скільки диктантів на слух
 
 // Німецькі шкільні оцінки: 1 — найкраща, 6 — найгірша
 const NOTEN = [[92, 1, 'sehr gut'], [81, 2, 'gut'], [67, 3, 'befriedigend'], [50, 4, 'ausreichend'], [30, 5, 'mangelhaft'], [0, 6, 'ungenügend']];
+const NOTE_1 = NOTEN[0][0]; // з якого відсотка ставимо 1
+
+// Застосунок для Android (android/) тримає TikTok і YouTube закритими, доки не здано
+// новий урок на 1. Сайт лише повідомляє результат, а рішення й текст відповіді дає застосунок.
+// Новий урок — той, що ще не був зданий на 1. Коли таких не лишилося, рахується будь-який.
+function reportToPhoneApp(content, state, lesson, pct, prevBest) {
+  if (typeof window.DTApp?.lessonPassed !== 'function') return null;
+  const noNewLeft = content.lessons.every(
+    (l) => l.planned || !l.exercises.length || (state.exercises[l.id] || 0) >= NOTE_1,
+  );
+  const isNew = prevBest < NOTE_1 || noNewLeft;
+  try {
+    return JSON.parse(window.DTApp.lessonPassed(lesson.id, pct, isNew));
+  } catch {
+    return null;
+  }
+}
 
 // «Знайди пари»: німецьке слово ↔ переклад (переклади без повторів)
-function matchRound(lesson) {
+function matchRound(pool) {
   const seen = new Set();
-  const words = shuffle(lesson.words).filter((w) => !seen.has(w.ua) && seen.add(w.ua)).slice(0, MATCH);
+  const words = shuffle(pool).filter((w) => !seen.has(w.ua) && seen.add(w.ua)).slice(0, MATCH);
   return words.length >= 3 ? [{ type: 'match', words }] : [];
 }
 
 // Диктант: короткі приклади речень зі слів уроку
-function listenRound(lesson) {
-  return shuffle(lesson.words.filter((w) => w.ex && w.ex.split(' ').length <= 6))
+function listenRound(pool) {
+  return shuffle(pool.filter((w) => w.ex && w.ex.split(' ').length <= 6))
     .slice(0, LISTEN)
     .map((w) => ({ type: 'listen', answers: [w.ex], explain: w.exUa }));
 }
 
-// Розминка з артиклями зі слів уроку
-function articleDrill(lesson) {
-  const nouns = lesson.words.filter((w) => w.pos === 'n' && w.art && !w.plOnly);
+// Розминка з артиклями зі слів уроку (pool — слова уроку і його список повторення)
+function articleDrill(pool) {
+  const nouns = pool.filter((w) => w.pos === 'n' && w.art && !w.plOnly);
   return shuffle(nouns).slice(0, ARTICLE_DRILL).map((w) => ({
     type: 'choice',
     drill: true,
@@ -80,8 +97,10 @@ export function render(app, content, lessonId) {
     // Диктанти вставляємо між вправами уроку, щоб типи чергувалися
     const own = lesson.exercises;
     const third = Math.ceil(own.length / 3);
-    const [l1, l2] = listenRound(lesson);
-    items = [...articleDrill(lesson), ...matchRound(lesson), ...own.slice(0, third), l1,
+    // В уроці-фокусі мало своїх слів — автоматичні вправи беруть і слова з його списку повторення
+    const pool = [...lesson.words, ...(lesson.review || []).map((id) => content.wordById.get(id)).filter(Boolean)];
+    const [l1, l2] = listenRound(pool);
+    items = [...articleDrill(pool), ...matchRound(pool), ...own.slice(0, third), l1,
       ...own.slice(third, 2 * third), l2, ...own.slice(2 * third)].filter(Boolean);
     i = 0;
     right = 0;
@@ -304,6 +323,7 @@ export function render(app, content, lessonId) {
     const state = getState();
     const pct = Math.round((right / items.length) * 100);
     const prevBest = state.exercises[lesson.id] || 0;
+    const guard = reportToPhoneApp(content, state, lesson, pct, prevBest); // до оновлення рекорду
     state.exercises[lesson.id] = Math.max(prevBest, pct);
     dayStats().exercises++;
     markActive();
@@ -322,6 +342,11 @@ export function render(app, content, lessonId) {
         <p>Результат ${pct}%${record}</p>
         ${pct < 70 ? '<p>Перечитай граматику уроку й спробуй ще раз</p>' : ''}
         <p class="muted">Оцінка — як у німецькій школі: 1 найкраща, 6 найгірша</p>
+        ${guard?.text ? `
+          <div class="fb ${guard.counted ? 'ok' : 'bad'}" role="status">
+            <p class="fb-title">${esc(guard.title)}</p>
+            <p class="fb-explain">${esc(guard.text)}</p>
+          </div>` : ''}
         ${wrong.length ? `
           <h2>Над чим попрацювати</h2>
           <ul class="mistakes">${wrong.map((ex) => `

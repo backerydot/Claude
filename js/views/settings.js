@@ -117,6 +117,11 @@ export function render(app) {
   });
 
   root.querySelector('[data-act="export"]').addEventListener('click', () => {
+    // У застосунку для Android завантаження файлів не працює — файл зберігає сам застосунок
+    if (typeof window.DTApp?.saveBackup === 'function') {
+      window.DTApp.saveBackup(`deutsch-trainer-${today()}.json`, exportJSON());
+      return;
+    }
     const blob = new Blob([exportJSON()], { type: 'application/json' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);

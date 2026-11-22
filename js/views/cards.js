@@ -23,15 +23,55 @@ export function planSession(content, state, lessonId) {
   const newToday = state.daily[t]?.newCards || 0;
   // Із уроку беремо до 10 нових за раз, із загального повторення — за денним лімітом
   const limit = lesson ? 10 : Math.max(0, state.settings.newPerDay - newToday);
-  return { due: shuffle(due), fresh: fresh.slice(0, limit) };
+  const review = lesson ? pickReview(content, state, lesson) : [];
+  // Слова з минулих уроків розкладаємо між словами уроку, щоб вони не йшли купкою
+  const own = shuffle(due);
+  review.forEach((w, i) => own.splice(Math.min(own.length, i * 3 + 1), 0, w));
+  return { due: own, fresh: fresh.slice(0, limit), review };
 }
+
+// Скільки слів із минулих уроків підмішувати в картки звичайного уроку
+const REVIEW_EXTRA = 5;
+
+// Слова з минулих уроків для повторення в цьому уроці.
+// Урок-фокус має власний список (lesson.review) — його слова йдуть першими.
+// Далі: слова, що й так «на сьогодні», потім ті, на яких були помилки, потім випадкові вивчені.
+function pickReview(content, state, lesson) {
+  const t = today();
+  const idx = content.lessons.indexOf(lesson);
+  const past = content.lessons.slice(0, Math.max(0, idx)).flatMap((l) => l.words);
+  const seen = (w) => state.cards[w.id]?.seen;
+  const picked = new Map();
+  const add = (list, max) => {
+    for (const w of list) {
+      if (picked.size >= max) break;
+      if (w && !picked.has(w.id) && w.lesson !== lesson.id) picked.set(w.id, w);
+    }
+  };
+  // Список уроку-фокусу: нові з нього теж показуємо, а вже вивчені — якщо пора або слабкі
+  const listed = (lesson.review || []).map((id) => content.wordById.get(id)).filter(Boolean);
+  const focusMax = Math.min(15, listed.length);
+  add(shuffle(listed.filter((w) => !seen(w) || state.cards[w.id].due <= t || isWeak(state.cards[w.id]))), focusMax);
+  if (picked.size < Math.min(6, focusMax)) add(shuffle(listed.filter(seen)), Math.min(6, focusMax));
+
+  const max = picked.size + REVIEW_EXTRA;
+  const learned = past.filter(seen);
+  add(shuffle(learned.filter((w) => state.cards[w.id].due <= t)), max);
+  add(shuffle(learned.filter((w) => isWeak(state.cards[w.id]))), max);
+  add(shuffle(learned), max);
+  return [...picked.values()];
+}
+
+// Слабке слово: були помилки або картка «важка»
+const isWeak = (c) => c.lapses > 0 || c.ease < 2.3 || c.reps === 0;
 
 export function render(app, content, lessonId) {
   const state = getState();
   const lesson = lessonId ? content.lessonById.get(lessonId) : null;
   const back = lesson ? `#/lesson/${lesson.id}` : '#/';
-  const { due, fresh } = planSession(content, state, lessonId);
+  const { due, fresh, review } = planSession(content, state, lessonId);
   const queue = [...due, ...fresh];
+  const reviewIds = new Set(review.map((w) => w.id));
   const total = queue.length;
 
   if (!total) {
@@ -80,7 +120,10 @@ export function render(app, content, lessonId) {
       newSeen.add(w.id);
       dayStats().newCards++;
     }
-    state.cards[w.id] = schedule(state.cards[w.id], g);
+    // Слово з минулого уроку, якому ще не пора: «Добре»/«Легко» не зсуває розклад,
+    // а «Знову»/«Важко» — зсуває, щоб воно повернулося швидше
+    const early = reviewIds.has(w.id) && state.cards[w.id]?.seen && state.cards[w.id].due > today();
+    if (!(early && (g === 'good' || g === 'easy'))) state.cards[w.id] = schedule(state.cards[w.id], g);
     dayStats().reviews++;
     markActive();
     save();
@@ -114,7 +157,7 @@ export function render(app, content, lessonId) {
       </div>
       <div class="progress-line" aria-hidden="true"><i style="--p:${(done / total).toFixed(3)}"></i></div>
       <article class="kk" aria-live="polite">
-        <div class="kk-head"><span>${esc(lessonTitle)}</span>${isFresh(w) ? '<span class="kk-tag">нове слово</span>' : ''}</div>
+        <div class="kk-head"><span>${esc(lessonTitle)}</span>${isFresh(w) ? '<span class="kk-tag">нове слово</span>' : reviewIds.has(w.id) ? '<span class="kk-tag kk-tag-review">повторення</span>' : ''}</div>
         <div class="kk-front">${dir === 'de-ua' ? german : ukrainian}</div>
         ${flipped ? `<div class="kk-back">${dir === 'de-ua' ? ukrainian : german}${details}</div>` : ''}
       </article>

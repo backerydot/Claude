@@ -146,7 +146,7 @@ def main():
                 if not lesson.get("grammarPlan"):
                     warnings.append(f"{where}: у запланованого уроку немає grammarPlan")
                 continue
-            if not lesson.get("words"):
+            if not lesson.get("words") and not lesson.get("review"):
                 errors.append(f"{where}: в уроці немає слів")
             if len(lesson.get("exercises", [])) < 5:
                 warnings.append(f"{where}: менше 5 вправ")
@@ -159,6 +159,10 @@ def main():
                 check_exercise(ex, f"{where}, вправа {i}")
             for i, s in enumerate(lesson.get("speak", []), 1):
                 check_speak(s, f"{where}, фраза {i}")
+            # review — id слів з минулих уроків, які повторюємо в цьому (урок-фокус)
+            for rid in lesson.get("review", []):
+                if rid not in seen_ids:
+                    errors.append(f"{where}: у review слово «{rid}», якого немає в попередніх уроках")
             scene = lesson.get("scene")
             if not scene:
                 warnings.append(f"{where}: немає сцени (scene)")

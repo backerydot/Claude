@@ -3,7 +3,19 @@ import { getState } from './storage.js';
 
 // ---------- Озвучка ----------
 
-export const canSpeak = () => 'speechSynthesis' in window;
+// У застосунку для Android (android/) озвучує сам телефон через window.DTApp:
+// у вбудованому браузері Android speechSynthesis часто немає або він німий.
+const native = typeof window.DTApp?.speak === 'function' ? window.DTApp : null;
+const webSpeech = 'speechSynthesis' in window;
+export const canSpeak = () => !!native || webSpeech;
+
+// Застосунок повідомляє сюди, що фразу з номером id договорено
+const nativePending = new Map();
+let nativeSeq = 0;
+window.__dtSpoken = (id) => {
+  nativePending.get(id)?.();
+  nativePending.delete(id);
+};
 
 let voices = [];
 function refreshVoices() {
@@ -13,16 +25,16 @@ function refreshVoices() {
     voices = [];
   }
 }
-if (canSpeak()) refreshVoices();
+if (webSpeech) refreshVoices();
 
 export function germanVoices() {
-  if (canSpeak()) refreshVoices();
+  if (webSpeech) refreshVoices();
   return voices;
 }
 
 // Голоси в Chrome завантажуються не одразу — тут можна підписатися на їх появу
 export function onVoices(fn) {
-  if (!canSpeak()) return () => {};
+  if (!webSpeech) return () => {};
   const handler = () => { refreshVoices(); fn(voices); };
   speechSynthesis.addEventListener('voiceschanged', handler);
   return () => speechSynthesis.removeEventListener('voiceschanged', handler);
@@ -43,6 +55,13 @@ function pickVoice() {
 export function speak(text, { rate, pitch } = {}) {
   return new Promise((resolve) => {
     if (!canSpeak() || !text) return resolve();
+    if (native) {
+      const id = String(++nativeSeq);
+      const timer = setTimeout(() => window.__dtSpoken(id), 2000 + text.length * 150);
+      nativePending.set(id, () => { clearTimeout(timer); resolve(); });
+      native.speak(text, rate ?? getState().settings.ttsRate, pitch || 1, id);
+      return;
+    }
     refreshVoices();
     speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
@@ -61,7 +80,8 @@ export function speak(text, { rate, pitch } = {}) {
 }
 
 export function stopSpeaking() {
-  if (canSpeak()) speechSynthesis.cancel();
+  if (native) native.stopSpeaking();
+  else if (webSpeech) speechSynthesis.cancel();
 }
 
 // ---------- Розпізнавання мови ----------

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Охоронець отримує події лише від застосунків зі списку (TikTok, YouTube і браузери),
+     тому решту телефона він не бачить і батарею майже не їсть.
+     Список має збігатися з Schedule.BLOCKED_APPS і Schedule.BROWSERS. -->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/guard_description"
+    android:accessibilityEventTypes="typeWindowStateChanged|typeWindowContentChanged"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagReportViewIds"
+    android:canRetrieveWindowContent="true"
+    android:notificationTimeout="400"
+    android:packageNames="com.zhiliaoapp.musically,com.zhiliaoapp.musically.go,com.ss.android.ugc.trill,com.ss.android.ugc.aweme,com.google.android.youtube,app.revanced.android.youtube,com.android.chrome,com.chrome.beta,com.sec.android.app.sbrowser,org.mozilla.firefox,com.microsoft.emmx,com.opera.browser,com.opera.mini.native,com.brave.browser,com.yandex.browser,com.mi.globalbrowser,com.android.browser" />

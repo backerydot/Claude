@@ -10,3 +10,8 @@ deutsch-trainer-*.json
 .DS_Store
 Thumbs.db
 __pycache__/
+
+# Збірка застосунку для Android (ключ підпису живе в ~/Android/keys, не тут)
+android/build/
+*.jks
+*.apk
