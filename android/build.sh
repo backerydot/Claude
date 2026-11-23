@@ -10,8 +10,8 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-VERSION_CODE=1      # збільшуйте на 1 з кожною новою версією
-VERSION_NAME=1.0
+VERSION_CODE=2      # збільшуйте на 1 з кожною новою версією
+VERSION_NAME=1.1
 
 JAVA_HOME=${JAVA_HOME:-$(ls -d ~/.local/opt/jdk-17* | head -1)}
 ANDROID_HOME=${ANDROID_HOME:-$HOME/Android/Sdk}

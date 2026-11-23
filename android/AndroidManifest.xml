@@ -5,12 +5,19 @@
     package="com.deutschtrainer.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Тихе постійне сповіщення охоронця: «передня» служба, яку MIUI не вбиває -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
 
     <!-- Щоб знайти на телефоні синтезатор мови для озвучки (Android 11+) -->
     <queries>
         <intent>
             <action android:name="android.intent.action.TTS_SERVICE" />
         </intent>
+        <!-- «Ліміт»: сюди віддаємо +5 хв за зданий урок -->
+        <package android:name="com.deutschtrainer.limit" />
     </queries>
 
     <application
@@ -33,11 +40,29 @@
             </intent-filter>
         </activity>
 
+        <!-- Друга іконка: «Хімія» — той самий застосунок, розділ chem/ сайту -->
+        <activity
+            android:name=".ChemActivity"
+            android:label="@string/chem_name"
+            android:icon="@mipmap/ic_chem"
+            android:roundIcon="@mipmap/ic_chem"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.deutschtrainer.app.chem"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <!-- Охоронець: служба спеціальних можливостей, бачить, який застосунок відкрито -->
         <service
             android:name=".GuardService"
             android:label="@string/guard_name"
             android:exported="true"
+            android:foregroundServiceType="specialUse"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService" />
@@ -45,6 +70,9 @@
             <meta-data
                 android:name="android.accessibilityservice"
                 android:resource="@xml/guard_service" />
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Study guard: blocks distracting apps until a lesson is passed" />
         </service>
     </application>
 </manifest>

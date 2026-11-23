@@ -11,6 +11,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.PowerManager;
+import android.accessibilityservice.AccessibilityServiceInfo;
+import android.view.accessibility.AccessibilityManager;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
@@ -36,6 +41,7 @@ import org.json.JSONObject;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -73,6 +79,11 @@ public class MainActivity extends Activity {
         }
     };
 
+    /** Хімія — та сама активність, але інша сторінка й без смуги охоронця (див. ChemActivity). */
+    boolean isChem() {
+        return false;
+    }
+
     @Override
     protected void onCreate(Bundle saved) {
         super.onCreate(saved);
@@ -83,8 +94,14 @@ public class MainActivity extends Activity {
         setContentView(buildLayout());
         setupWebView();
         setupTts();
-        if (saved == null || web.restoreState(saved) == null) web.loadUrl(siteUrl);
+        if (saved == null || web.restoreState(saved) == null) web.loadUrl(isChem() ? siteUrl + "chem/" : siteUrl);
         handleKick(getIntent());
+        if (isChem()) banner.setVisibility(View.GONE);
+        // Android 13+: дозвіл на тихе сповіщення охоронця (без нього MIUI швидше його вбиває)
+        if (Build.VERSION.SDK_INT >= 33
+                && checkSelfPermission("android.permission.POST_NOTIFICATIONS") != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 3);
+        }
     }
 
     // ---------- Вигляд ----------
@@ -170,26 +187,39 @@ public class MainActivity extends Activity {
         Calendar now = Calendar.getInstance();
         int bg;
         int accent;
-        if (!isGuardEnabled()) {
+        if (isChem()) return;
+        boolean enabled = isGuardEnabled();
+        boolean running = enabled && isGuardRunning();
+        if (!running || !batteryFree()) {
             bg = dark ? 0xFF373834 : 0xFFFFF4B0;
             accent = 0xFFFFE04A;
-            bannerTitle.setText("Охоронець вимкнений");
-            bannerText.setText("TikTok і YouTube зараз не блокуються");
+            if (!enabled) {
+                bannerTitle.setText("Охоронець вимкнений");
+                bannerText.setText("TikTok і YouTube зараз не блокуються");
+                bannerButton.setText("Увімкнути");
+            } else if (!running) {
+                bannerTitle.setText("Охоронець зупинився");
+                bannerText.setText("Телефон вимкнув його. Вимкніть і знову ввімкніть у «Спеціальних можливостях»");
+                bannerButton.setText("Виправити");
+            } else {
+                bannerTitle.setText("Охоронця може вимкнути батарея");
+                bannerText.setText("Дозвольте роботу без обмежень і автозапуск");
+                bannerButton.setText("Дозволити");
+            }
             bannerButton.setVisibility(View.VISIBLE);
         } else if (Schedule.isLocked(this, now)) {
             bg = dark ? 0xFF37293B : 0xFFFBE9E7;
             accent = dark ? 0xFFFF8073 : 0xFFC8372D;
             bannerTitle.setText("TikTok і YouTube закриті");
-            bannerText.setText(Schedule.lockedReason(now) + ". Здайте новий урок на 1 — і вільні "
-                    + Schedule.freeUntil(now) + ".");
+            bannerText.setText(Schedule.lockedReason(now) + ". Здайте новий урок на 1 — і вони відкриються одразу.");
             bannerButton.setVisibility(View.GONE);
         } else {
             bg = dark ? 0xFF1B363F : 0xFFE6F4EC;
             accent = dark ? 0xFF4FD18B : 0xFF13824B;
-            bannerTitle.setText("Вільні " + Schedule.freeUntil(now));
+            bannerTitle.setText("TikTok і YouTube відкриті ✓");
             bannerText.setText(Schedule.isEvening(now)
-                    ? "Вечірній урок зараховано. Завтра з 4:00 — новий ранковий."
-                    : "Ранковий урок зараховано. О 18:00 — вечірній.");
+                    ? "Вечірній урок зараховано. Відкриті аж до 4:00 ранку."
+                    : "Ранковий урок зараховано. Відкриті аж до 18:00, потім — вечірній урок.");
             bannerButton.setVisibility(View.GONE);
         }
         banner.setBackgroundColor(bg);
@@ -212,7 +242,28 @@ public class MainActivity extends Activity {
         return false;
     }
 
+    /** Служба справді працює (а не лише позначена в налаштуваннях, поки MIUI її вбив). */
+    private boolean isGuardRunning() {
+        AccessibilityManager am = (AccessibilityManager) getSystemService(ACCESSIBILITY_SERVICE);
+        if (am == null) return true;
+        List<AccessibilityServiceInfo> list = am.getEnabledAccessibilityServiceList(AccessibilityServiceInfo.FEEDBACK_ALL_MASK);
+        ComponentName me = new ComponentName(this, GuardService.class);
+        for (AccessibilityServiceInfo i : list) {
+            if (me.equals(ComponentName.unflattenFromString(i.getId()))) return true;
+        }
+        return false;
+    }
+
+    private boolean batteryFree() {
+        PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
+        return pm == null || pm.isIgnoringBatteryOptimizations(getPackageName());
+    }
+
     private void showGuardSetup() {
+        if (isGuardEnabled() && isGuardRunning()) {
+            showBatterySetup();
+            return;
+        }
         new AlertDialog.Builder(this)
                 .setTitle("Як увімкнути охоронця")
                 .setMessage("1. Натисніть «Спеціальні можливості», знайдіть «Встановлені застосунки» "
@@ -225,6 +276,32 @@ public class MainActivity extends Activity {
                 .setNeutralButton("Про застосунок", (d, w) ->
                         openSettings(new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
                                 Uri.parse("package:" + getPackageName()))))
+                .show();
+    }
+
+    /** Щоб MIUI не вбивав охоронця: без обмежень батареї + автозапуск. */
+    private void showBatterySetup() {
+        new AlertDialog.Builder(this)
+                .setTitle("Щоб охоронець не зупинявся")
+                .setMessage("1. «Батарея» → погодьтесь працювати без обмежень.\n\n"
+                        + "2. «Автозапуск» → увімкніть для Deutsch-Trainer і Ліміту.")
+                .setPositiveButton("Батарея", (d, w) -> {
+                    try {
+                        startActivity(new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS,
+                                Uri.parse("package:" + getPackageName())));
+                    } catch (Exception e) {
+                        openSettings(new Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS));
+                    }
+                })
+                .setNeutralButton("Автозапуск", (d, w) -> {
+                    try {
+                        startActivity(new Intent().setComponent(new ComponentName("com.miui.securitycenter",
+                                "com.miui.permcenter.autostart.AutoStartManagementActivity")));
+                    } catch (Exception e) {
+                        openSettings(new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                                Uri.parse("package:" + getPackageName())));
+                    }
+                })
                 .show();
     }
 
@@ -253,6 +330,7 @@ public class MainActivity extends Activity {
         s.setDomStorageEnabled(true);                // прогрес живе в localStorage
         s.setMediaPlaybackRequiresUserGesture(false); // звуки в стрес-тесті
         web.addJavascriptInterface(new Bridge(), "DTApp");
+        if (isChem()) web.addJavascriptInterface(new ChemBridge(), "ChemApp");
 
         web.setWebViewClient(new WebViewClient() {
             @Override
@@ -313,7 +391,22 @@ public class MainActivity extends Activity {
         public String lessonPassed(String lessonId, int pct, boolean isNew) {
             String result = Schedule.lessonPassed(MainActivity.this, lessonId, pct, isNew);
             runOnUiThread(MainActivity.this::refreshBanner);
-            return result;
+            // Урок на 1 уперше — ще й +5 хв у «Ліміті» (повтори «Ліміт» сам не рахує)
+            String bonus = pct >= Schedule.PASS ? Bonus.grant(MainActivity.this, "de:" + lessonId) : null;
+            if (bonus == null) return result;
+            try {
+                JSONObject o = new JSONObject(result);
+                if (o.optString("text").isEmpty()) {
+                    o.put("counted", true).put("title", "Екстра-час!").put("text", bonus);
+                } else if (o.optBoolean("counted")) {
+                    o.put("text", o.optString("text") + " " + bonus);
+                } else {
+                    o.put("text", o.optString("text") + " А за новий урок: " + bonus);
+                }
+                return o.toString();
+            } catch (Exception e) {
+                return result;
+            }
         }
 
         @JavascriptInterface
@@ -344,6 +437,21 @@ public class MainActivity extends Activity {
                     toast("Не вдалося зберегти копію");
                 }
             });
+        }
+    }
+
+    /** window.ChemApp — лише в «Хімії». */
+    final class ChemBridge {
+        /** Урок хімії здано вперше (сайт сам перевіряє, що вперше). JSON {title, text} або {}. */
+        @JavascriptInterface
+        public String lessonPassed(String lessonId, int pct) {
+            String bonus = Bonus.grant(MainActivity.this, "chem:" + lessonId);
+            if (bonus == null) return "{}";
+            try {
+                return new JSONObject().put("title", "Екстра-час!").put("text", bonus).toString();
+            } catch (Exception e) {
+                return "{}";
+            }
         }
     }
 

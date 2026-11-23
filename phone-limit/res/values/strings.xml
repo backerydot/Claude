@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ліміт</string>
+    <string name="service_name">Охоронець ліміту</string>
+    <string name="service_description">Рахує час у застосунках і закриває їх, коли вичерпано ліміт: 30 хв з 5 до 10, 30 хв з 10 до 15, 2 год з 15 до 24. Telegram, Viber, браузер, Deutsch-Trainer, дзвінки й налаштування — без ліміту.</string>
+</resources>

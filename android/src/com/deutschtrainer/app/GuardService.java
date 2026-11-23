@@ -19,6 +19,32 @@ public class GuardService extends AccessibilityService {
     private long lastKick = 0;
     private final Handler handler = new Handler(Looper.getMainLooper());
 
+    // Раз на хвилину оновлюємо сповіщення: о 18:00 і о 4:00 стан змінюється сам
+    private final Runnable pulse = new Runnable() {
+        @Override
+        public void run() {
+            boolean locked = Schedule.isLocked(GuardService.this);
+            java.util.Calendar now = java.util.Calendar.getInstance();
+            KeepAlive.show(GuardService.this,
+                    locked ? "TikTok і YouTube закриті" : "TikTok і YouTube відкриті",
+                    locked ? Schedule.lockedReason(now) + " — здайте новий урок на 1"
+                            : "Вільні " + Schedule.freeUntil(now));
+            handler.postDelayed(this, 60_000);
+        }
+    };
+
+    @Override
+    protected void onServiceConnected() {
+        handler.post(pulse);
+    }
+
+    @Override
+    public void onDestroy() {
+        handler.removeCallbacks(pulse);
+        KeepAlive.hide(this);
+        super.onDestroy();
+    }
+
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
         CharSequence pkg = event.getPackageName();

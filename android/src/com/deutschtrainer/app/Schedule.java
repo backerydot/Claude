@@ -117,8 +117,8 @@ final class Schedule {
                 .putString(isEvening(now) ? "eveningDone" : "morningDone", slotKey(now))
                 .putString("lastLesson", lessonId)
                 .apply();
-        return json(true, "Зараховано!",
-                "TikTok і YouTube відкриті " + freeUntil(now) + ".");
+        return json(true, "Зараховано! TikTok і YouTube відкриті",
+                isEvening(now) ? "Вільні аж до 4:00 ранку." : "Вільні аж до 18:00. Після 18:00 знадобиться ще один, вечірній урок.");
     }
 
     private static String json(boolean counted, String title, String text) {

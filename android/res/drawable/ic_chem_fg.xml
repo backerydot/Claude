@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Іконка «Хімія»: колба, рідина — жовтий маркер -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <path android:fillColor="#FFE04A" android:pathData="M39,62 L69,62 L76,74 C77.5,76.5 76,79 73,79 L35,79 C32,79 30.5,76.5 32,74 Z" />
+    <path android:strokeColor="#1A2340" android:strokeWidth="4" android:strokeLineJoin="round" android:strokeLineCap="round"
+        android:pathData="M45,29 H63 M48,29 V48 L32,74 C30.5,76.5 32,79 35,79 H73 C76,79 77.5,76.5 76,74 L60,48 V29 M39,62 H69" />
+</vector>

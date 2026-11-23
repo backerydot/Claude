@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ліміт телефона: 3 години на день сесіями + режим брата.
+     Окремий застосунок поруч із Deutsch-Trainer. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.deutschtrainer.limit">
+
+    <!-- Постійне тихе сповіщення: «передня» служба, яку MIUI не вбиває для економії батареї -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Кнопка «Без обмежень батареї» — прямий запит, без пошуку в налаштуваннях -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <!-- Android 11+: щоб знайти лаунчер (він завжди дозволений) і відкрити Deutsch-Trainer -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.HOME" />
+        </intent>
+        <package android:name="com.deutschtrainer.app" />
+    </queries>
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:theme="@style/AppTheme"
+        android:allowBackup="false">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Охоронець ліміту: бачить, який застосунок на екрані, і рахує час -->
+        <service
+            android:name=".LimitService"
+            android:label="@string/service_name"
+            android:exported="true"
+            android:foregroundServiceType="specialUse"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/limit_service" />
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Screen-time limit guard: counts app usage, shows time left" />
+        </service>
+
+        <!-- Deutsch-Trainer (той самий ключ підпису) додає сюди +5 хв за зданий урок -->
+        <provider
+            android:name=".BonusProvider"
+            android:authorities="com.deutschtrainer.limit.bonus"
+            android:exported="true" />
+    </application>
+</manifest>

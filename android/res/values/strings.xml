@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Deutsch-Trainer</string>
+    <string name="chem_name">Хімія</string>
     <string name="guard_name">Охоронець Deutsch-Trainer</string>
     <string name="guard_description">Закриває TikTok і YouTube, доки не здано новий урок на 1: вранці (до 18:00) і ввечері. Без цього дозволу блокування не працює.</string>
     <!-- Адреса сайту-тренера. build.sh може підмінити її для тестів (SITE_URL=…) -->

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Іконка: пісочний годинник, нижня половина — жовтий маркер -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <path android:fillColor="#FFE04A" android:pathData="M54,56 L70,72 L70,76 L38,76 L38,72 Z" />
+    <path android:strokeColor="#1A2340" android:strokeWidth="4" android:strokeLineJoin="round"
+        android:pathData="M36,32 H72 M36,76 H72 M40,32 V38 L54,54 L40,70 V76 M68,32 V38 L54,54 L68,70 V76" />
+</vector>

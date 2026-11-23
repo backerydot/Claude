@@ -1,0 +1,681 @@
+/* Хімія: доповнення до ../css/style.css (зошит у клітинку, жовтий маркер).
+   Урок — клітинка періодичної таблиці; формули з індексами; рівняння з полями коефіцієнтів. */
+
+:root {
+  --metal: #2457c5;
+  --metal-bg: #e8effc;
+  --nonmetal: #13824b;
+  --nonmetal-bg: #e3f4ea;
+  --noble: #8f5f06;
+  --noble-bg: #f8eed6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --metal: #82a8ff;
+    --metal-bg: rgba(130, 168, 255, 0.14);
+    --nonmetal: #4fd18b;
+    --nonmetal-bg: rgba(79, 209, 139, 0.13);
+    --noble: #e7b552;
+    --noble-bg: rgba(231, 181, 82, 0.14);
+  }
+}
+
+.chem-mark {
+  display: inline-flex;
+  height: auto;
+  color: var(--ink);
+}
+
+.chem-mark .ico {
+  width: 22px;
+  height: 22px;
+}
+
+.chem-tabs {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.kicker {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.small {
+  font-size: 14px;
+}
+
+/* ---------- Формули ---------- */
+
+.f {
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.f sub,
+.f sup {
+  font-size: 0.7em;
+  line-height: 0;
+}
+
+.f .coef {
+  margin-right: 1px;
+  font-weight: 700;
+}
+
+/* ---------- Клітинка-урок (як у таблиці Менделєєва) ---------- */
+
+.tile {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  background: var(--card);
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  box-shadow: 3px 3px 0 var(--marker);
+}
+
+.tile-big {
+  width: 72px;
+  height: 72px;
+}
+
+.tile-num {
+  font-family: var(--font-cond);
+  font-stretch: condensed;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tile-sec {
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+/* ---------- Головна ---------- */
+
+.next-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 20px;
+  text-decoration: none;
+  background: var(--card);
+  border-radius: 6px;
+  box-shadow: var(--shadow-card);
+}
+
+.next-body .t {
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.next-btn {
+  margin-top: 12px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0 0;
+  border-top: 2px solid var(--ink);
+}
+
+.stat .num {
+  font-size: 40px;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.stat .muted {
+  font-size: 14px;
+}
+
+.bonus-line {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin-top: 20px;
+  padding: 12px 16px;
+  font-size: 15px;
+  background: var(--marker-soft);
+  border-radius: 8px;
+}
+
+.bonus-line .ico {
+  flex: none;
+  width: 22px;
+  height: 22px;
+}
+
+.path-sec {
+  padding: 12px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.path-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.path-head .meta {
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.path-cells {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.path-cells .cell {
+  width: 20px;
+  height: 20px;
+  background: var(--card);
+  border: 1.5px solid var(--rule);
+  border-radius: 3px;
+}
+
+.path-cells .cell.is-done {
+  background: var(--marker);
+  border-color: var(--marker);
+}
+
+.path-cells .cell.is-next {
+  border: 2.5px solid var(--ink);
+}
+
+/* ---------- Список уроків ---------- */
+
+.lesson-sec {
+  margin-bottom: 32px;
+}
+
+.lesson-sec h2 {
+  margin-top: 8px;
+}
+
+.lesson-row .num {
+  font-size: 22px;
+}
+
+.lesson-row .meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.lesson-row .meta .ico {
+  width: 18px;
+  height: 18px;
+}
+
+.is-passed .lesson-row .meta {
+  color: var(--ok);
+}
+
+.is-next .lesson-row {
+  background: var(--marker-soft);
+}
+
+.is-next .lesson-row .meta {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ---------- Урок ---------- */
+
+.goal-list {
+  padding-left: 20px;
+}
+
+.goal-list li {
+  margin-bottom: 6px;
+}
+
+.ex.card {
+  padding-top: 20px;
+  border-top: 4px solid var(--card-top);
+}
+
+.card-title {
+  font-size: 22px;
+}
+
+.card-text p {
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+.chem-table {
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.chem-table td,
+.chem-table th {
+  padding: 8px 12px;
+  text-align: left;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+}
+
+.chem-table th {
+  font-weight: 600;
+  background: var(--marker-soft);
+}
+
+.example {
+  margin: 16px 0;
+  padding: 12px 16px;
+  background: var(--paper);
+  border-left: 3px solid var(--ink);
+  border-radius: 0 8px 8px 0;
+}
+
+.example p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.example .example-title {
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.tip {
+  padding-left: 12px;
+  color: var(--ink-2);
+  border-left: 3px solid var(--marker);
+}
+
+.card-actions {
+  margin-bottom: 0;
+}
+
+.progress-line.is-quiz i {
+  background: var(--card-top);
+}
+
+.ex-q-small {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.ex .ex-q {
+  font-size: 20px;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.unit {
+  flex: none;
+  font-size: 18px;
+  color: var(--ink-2);
+}
+
+.preview {
+  min-height: 24px;
+  margin: 8px 0 0;
+  color: var(--ink-2);
+}
+
+.preview .f {
+  font-size: 20px;
+  color: var(--ink);
+}
+
+.ex .text-input.formula-input {
+  font-family: var(--font);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Рівняння ---------- */
+
+.equation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 6px;
+  margin: 8px 0 16px;
+  font-size: 24px;
+}
+
+.eq-term {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.eq-plus,
+.eq-arrow {
+  color: var(--ink-2);
+}
+
+.eq-arrow {
+  margin: 0 4px;
+}
+
+.coef-input {
+  width: 2.1ch;
+  min-width: 36px;
+  height: 44px;
+  padding: 0;
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  color: var(--ink);
+  background: var(--marker-soft);
+  border: 0;
+  border-bottom: 2.5px solid var(--ink);
+  border-radius: 4px 4px 0 0;
+}
+
+.coef-input::placeholder {
+  color: var(--ink-3);
+  font-weight: 400;
+}
+
+.atom-count {
+  border-collapse: collapse;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.atom-count th,
+.atom-count td {
+  padding: 6px 14px;
+  text-align: center;
+  border-bottom: 1px solid var(--rule);
+}
+
+.atom-count th {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.atom-count .eq-ok td:last-child {
+  color: var(--ok);
+  font-weight: 700;
+}
+
+.atom-count .eq-bad td:last-child {
+  color: var(--bad);
+  font-weight: 700;
+}
+
+/* ---------- Розклади по групах ---------- */
+
+.sort-list {
+  list-style: none;
+  margin: 12px 0;
+  padding: 0;
+}
+
+.sort-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.sort-item {
+  font-size: 18px;
+}
+
+.sort-list .seg {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sort-list .seg button {
+  min-height: 40px;
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1.5px solid var(--rule);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sort-list .seg button[aria-pressed="true"] {
+  background: var(--marker);
+  border-color: var(--marker);
+  color: var(--marker-ink);
+  font-weight: 600;
+}
+
+.sort-list li.is-missing .sort-item {
+  color: var(--bad);
+}
+
+.sort-list li.is-right .sort-item::after {
+  content: " ✓";
+  color: var(--ok);
+}
+
+.sort-list li.is-wrong .sort-item::after {
+  content: " ✗";
+  color: var(--bad);
+}
+
+.sort-list .seg button.is-answer {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Результат ---------- */
+
+.stamp {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 124px;
+  height: 124px;
+  margin: 0 8px 0 0;
+  padding: 8px;
+  font-family: var(--font-cond);
+  font-stretch: condensed;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  border: 3px solid;
+  border-radius: 50% 44% 52% 46% / 46% 52% 44% 50%;
+  transform: rotate(-8deg);
+  animation: pop 0.4s ease-out;
+}
+
+.stamp.ok {
+  color: var(--ok);
+}
+
+.stamp.bad {
+  color: var(--card-top);
+}
+
+.chem-mistakes li {
+  grid-template-columns: 1fr;
+}
+
+.chem-mistakes b {
+  display: block;
+  margin: 2px 0;
+}
+
+.m-explain {
+  display: block;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+.fb.bonus {
+  border-color: var(--marker);
+}
+
+.fb.bonus .fb-title {
+  color: var(--ink);
+}
+
+/* ---------- Таблиця Менделєєва ---------- */
+
+.legend .dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  vertical-align: -1px;
+  border-radius: 2px;
+}
+
+.ptable-wrap {
+  overflow-x: auto;
+  margin: 0 -16px;
+  padding: 4px 16px 12px;
+}
+
+.ptable {
+  display: grid;
+  grid-template-columns: repeat(18, 44px);
+  grid-template-rows: 20px repeat(4, 52px);
+  gap: 3px;
+  width: max-content;
+}
+
+.pg {
+  font-size: 11px;
+  text-align: center;
+  color: var(--ink-3);
+}
+
+.el {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  justify-items: center;
+  width: 44px;
+  height: 52px;
+  padding: 2px 0;
+  font: inherit;
+  color: var(--ink);
+  border: 1.5px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.el-m { background: var(--metal-bg); }
+.el-n { background: var(--nonmetal-bg); }
+.el-g { background: var(--noble-bg); }
+.el-m .el-s { color: var(--metal); }
+.el-n .el-s { color: var(--nonmetal); }
+.el-g .el-s { color: var(--noble); }
+
+.legend .dot.el-m { background: var(--metal); }
+.legend .dot.el-n { background: var(--nonmetal); }
+.legend .dot.el-g { background: var(--noble); }
+
+.el.is-picked {
+  border-color: var(--ink);
+  box-shadow: 2px 2px 0 var(--marker);
+}
+
+.el-z,
+.el-ar {
+  font-size: 10px;
+  line-height: 1.2;
+  color: var(--ink-2);
+}
+
+.el-s {
+  align-self: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ptable-extra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin: 8px 0 16px;
+}
+
+.el-info {
+  min-height: 96px;
+  padding: 16px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.el-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.el.big {
+  width: 72px;
+  height: 84px;
+  cursor: default;
+}
+
+.el.big .el-s {
+  font-size: 30px;
+}
+
+.el.big .el-z,
+.el.big .el-ar {
+  font-size: 13px;
+}
+
+.el-card h2 {
+  margin-bottom: 4px;
+}
+
+.el-card p {
+  margin-bottom: 4px;
+}
+
+@media (max-width: 380px) {
+  .next-card {
+    grid-template-columns: 1fr;
+  }
+
+  .equation {
+    font-size: 20px;
+  }
+}
